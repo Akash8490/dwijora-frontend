@@ -1,0 +1,16 @@
+{
+  "name": "dwijora-design-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Client-facing design approval package for the Viśvasaṃvid journal website.",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "build-html": "node scripts/build-html.mjs",
+    "build-pdf": "node scripts/build-pdf.mjs",
+    "all": "npm run capture && npm run build-html && npm run build-pdf"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

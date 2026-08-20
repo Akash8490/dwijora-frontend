@@ -1,0 +1,365 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===================================================================
+ * Viśvasaṃvid design tokens
+ * All colours, radii, spacing, motion live here — never inline.
+ * =================================================================== */
+
+:root {
+  /* Brand palette */
+  --brand-ink: #1e2a4a;
+  --brand-primary: #26407a;
+  --brand-primary-hover: #1e3466;
+  --brand-accent: #e0a22b;
+  /* accent-deep is used for eyebrows (uppercase 12px) — must clear
+     WCAG AA on --brand-surface and --brand-surface-2 (≥4.5:1). */
+  --brand-accent-deep: #8b5a0d;
+  --brand-surface: #faf7f1;
+  --brand-surface-2: #f3ece0;
+  --brand-card: #ffffff;
+  --brand-border: #e6decf;
+  --brand-border-strong: #d9cdb3;
+  /* muted body/label text — must clear WCAG AA on tinted surfaces
+     (light card bg #f7f3ea etc.). Deeper slate: 5.4:1 on surface-2. */
+  --brand-muted: #576273;
+  --brand-muted-2: #8a8579;
+  --brand-success: #1b7f5a;
+  --brand-danger: #b4483c;
+  --brand-info: #26407a;
+
+  /* Semantic tokens (shadcn-compatible) */
+  --radius: 0.75rem;
+  --radius-input: 0.5rem;
+  --background: var(--brand-surface);
+  --foreground: var(--brand-ink);
+  --card: var(--brand-card);
+  --card-foreground: var(--brand-ink);
+  --popover: var(--brand-card);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-surface-2);
+  --secondary-foreground: var(--brand-ink);
+  --muted: var(--brand-surface-2);
+  --muted-foreground: var(--brand-muted);
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-ink);
+  --destructive: var(--brand-danger);
+  --border: var(--brand-border);
+  --input: var(--brand-border);
+  --ring: var(--brand-primary);
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-accent);
+  --chart-3: var(--brand-ink);
+  --chart-4: var(--brand-accent-deep);
+  --chart-5: var(--brand-muted);
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-primary);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--brand-surface-2);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: var(--brand-border);
+  --sidebar-ring: var(--brand-primary);
+}
+
+.dark {
+  --brand-ink: #f4efe4;
+  --brand-primary: #97b0e0;
+  --brand-primary-hover: #b6c7ea;
+  --brand-accent: #e8b558;
+  --brand-accent-deep: #c88a29;
+  --brand-surface: #0f1424;
+  --brand-surface-2: #172038;
+  --brand-card: #141b30;
+  --brand-border: #26304c;
+  --brand-border-strong: #3a476a;
+  --brand-muted: #9aa3b5;
+  --brand-muted-2: #7d8397;
+
+  --background: var(--brand-surface);
+  --foreground: var(--brand-ink);
+  --card: var(--brand-card);
+  --card-foreground: var(--brand-ink);
+  --popover: var(--brand-card);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-primary);
+  --primary-foreground: #0b1122;
+  --secondary: var(--brand-surface-2);
+  --secondary-foreground: var(--brand-ink);
+  --muted: var(--brand-surface-2);
+  --muted-foreground: var(--brand-muted);
+  --accent: var(--brand-accent);
+  --accent-foreground: #1a1204;
+  --destructive: #e0705f;
+  --border: var(--brand-border);
+  --input: var(--brand-border);
+  --ring: var(--brand-primary);
+  --sidebar: var(--brand-card);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-primary);
+  --sidebar-primary-foreground: #0b1122;
+  --sidebar-accent: var(--brand-surface-2);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: var(--brand-border);
+  --sidebar-ring: var(--brand-primary);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-deep: var(--brand-accent-deep);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-surface-2: var(--brand-surface-2);
+  --color-brand-card: var(--brand-card);
+  --color-brand-border: var(--brand-border);
+  --color-brand-border-strong: var(--brand-border-strong);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-success: var(--brand-success);
+  --color-brand-danger: var(--brand-danger);
+  --color-brand-info: var(--brand-info);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-deva-serif: var(--font-deva-serif), "Noto Serif Devanagari", serif;
+  --font-deva-sans: var(--font-deva-sans), "Noto Sans Devanagari", sans-serif;
+  --font-guj-serif: var(--font-guj-serif), "Noto Serif Gujarati", serif;
+  --font-guj-sans: var(--font-guj-sans), "Noto Sans Gujarati", sans-serif;
+  --font-serif: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), Georgia, serif;
+    letter-spacing: -0.01em;
+    color: var(--brand-ink);
+  }
+  :lang(sa), :lang(hi), .font-deva-serif {
+    font-family: var(--font-deva-serif), "Noto Serif Devanagari", serif;
+    line-height: 1.6;
+    font-feature-settings: "kern", "liga";
+  }
+  .font-deva-sans {
+    font-family: var(--font-deva-sans), "Noto Sans Devanagari", sans-serif;
+    line-height: 1.6;
+  }
+  :lang(gu), .font-guj-serif {
+    font-family: var(--font-guj-serif), "Noto Serif Gujarati", serif;
+    line-height: 1.6;
+    font-feature-settings: "kern", "liga";
+  }
+  .font-guj-sans {
+    font-family: var(--font-guj-sans), "Noto Sans Gujarati", sans-serif;
+    line-height: 1.6;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand-accent) 40%, transparent);
+    color: var(--brand-ink);
+  }
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-page { padding-inline: 2rem; }
+  }
+  .prose-brand {
+    color: var(--brand-ink);
+    line-height: 1.75;
+    max-width: 68ch;
+  }
+  .prose-brand p { margin-block: 0.85rem; }
+  .prose-brand h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-brand h3 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-brand ul, .prose-brand ol {
+    margin-left: 1.25rem;
+    margin-block: 0.75rem;
+  }
+  .prose-brand ul { list-style: disc; }
+  .prose-brand ol { list-style: decimal; }
+  /*
+   * `:where(a)` gives zero specificity to this rule so any Tailwind utility
+   * class on the anchor (e.g. shadcn Button's `text-primary-foreground`)
+   * wins automatically. Without this escape hatch, a <Button asChild><Link/>
+   * inside <Prose> renders with the brand-primary text colour on top of a
+   * brand-primary background — invisible label.
+   *
+   * The rule is also scoped to bare anchors (no `bg-`/`border` classes) so
+   * pill-styled or button-styled links keep their own appearance.
+   */
+  .prose-brand :where(a):not([class*="bg-"]):not([class*="border"]) {
+    color: var(--brand-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, var(--brand-primary) 40%, transparent);
+  }
+  .prose-brand :where(a):not([class*="bg-"]):not([class*="border"]):hover {
+    color: var(--brand-accent-deep);
+  }
+  .prose-brand strong { color: var(--brand-ink); }
+  .prose-brand blockquote {
+    border-left: 3px solid var(--brand-accent);
+    padding-left: 1rem;
+    color: var(--brand-muted);
+    font-style: italic;
+    margin-block: 1rem;
+  }
+
+  .motion-in-view {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-in-y, 16px), 0);
+    transition: opacity 450ms ease-out, transform 450ms ease-out;
+    will-change: opacity, transform;
+  }
+  .motion-in-view.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .motion-in-view {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .accent-rule {
+    display: inline-block;
+    width: 2.75rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand-accent) 0%, var(--brand-accent-deep) 100%);
+    border-radius: 2px;
+  }
+
+  .paper-shadow {
+    box-shadow:
+      0 1px 2px rgba(30, 42, 74, 0.05),
+      0 8px 24px -12px rgba(30, 42, 74, 0.15);
+  }
+  .paper-shadow-hover {
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  .paper-shadow-hover:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 2px 6px rgba(30, 42, 74, 0.08),
+      0 18px 40px -14px rgba(30, 42, 74, 0.22);
+  }
+
+  .bg-surface { background-color: var(--brand-surface); }
+  .bg-surface-2 { background-color: var(--brand-surface-2); }
+  .bg-card-brand { background-color: var(--brand-card); }
+  .text-ink { color: var(--brand-ink); }
+  .text-muted-brand { color: var(--brand-muted); }
+  .border-brand { border-color: var(--brand-border); }
+
+  .ornament-dots {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--brand-accent) 50%, transparent) 1px,
+      transparent 1.5px
+    );
+    background-size: 14px 14px;
+  }
+  .ornament-gradient {
+    background: radial-gradient(
+      circle at 20% 0%,
+      color-mix(in oklab, var(--brand-accent) 12%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 100%,
+      color-mix(in oklab, var(--brand-primary) 12%, transparent) 0%,
+      transparent 55%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
