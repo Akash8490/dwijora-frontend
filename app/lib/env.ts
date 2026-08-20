@@ -1,14 +1,34 @@
 import { z } from "zod";
 
+/**
+ * Environment validation.
+ *
+ * Every var has a safe default so the site builds and boots even on a
+ * fresh deploy target with no environment configured (e.g. Vercel's first
+ * import step, a Docker `docker build` without --env-file). The defaults
+ * are development-shaped placeholders — override them per environment via
+ * `.env.production`, Vercel's Environment Variables, or the container
+ * platform's secret store.
+ *
+ * Setting an INVALID value (bad URL, wrong enum) still fails loudly at
+ * build/boot time — this only relaxes the "must be set" requirement, not
+ * the shape validation.
+ */
 const envSchema = z.object({
-  NEXT_PUBLIC_API_BASE_URL: z.string().url({
-    message: "NEXT_PUBLIC_API_BASE_URL must be a valid URL",
-  }),
+  // Backend base URL — the mock services in `app/lib/services/*` ignore
+  // this today; it will start being called when the real API lands.
+  NEXT_PUBLIC_API_BASE_URL: z
+    .string()
+    .url({ message: "NEXT_PUBLIC_API_BASE_URL must be a valid URL" })
+    .default("http://localhost:5000/api"),
   NEXT_PUBLIC_APP_ENV: z
     .enum(["development", "production", "test"])
     .default("development"),
-  NEXT_PUBLIC_APP_NAME: z.string().default("Dwijora"),
-  NEXT_PUBLIC_SITE_URL: z.string().url().default("http://localhost:3000"),
+  NEXT_PUBLIC_APP_NAME: z.string().default("Viśvasaṃvid"),
+  NEXT_PUBLIC_SITE_URL: z
+    .string()
+    .url({ message: "NEXT_PUBLIC_SITE_URL must be a valid URL" })
+    .default("http://localhost:3000"),
 });
 
 const parsed = envSchema.safeParse({
