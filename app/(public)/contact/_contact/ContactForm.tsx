@@ -9,6 +9,7 @@ import { Button } from "@/app/components/ui/button";
 import { Form } from "@/app/components/ui/form";
 import { TextField } from "@/app/components/form/TextField";
 import { TextareaField } from "@/app/components/form/TextareaField";
+import { logger } from "@/app/lib/logger";
 import { contactSchema, type ContactFormValues } from "@/app/utils/schema/contact.schema";
 
 export function ContactForm() {
@@ -22,7 +23,7 @@ export function ContactForm() {
   // TODO(api): replace with server action POSTing to a contact endpoint.
   const onSubmit = form.handleSubmit(async (values) => {
     await new Promise((r) => setTimeout(r, 700));
-    console.info("Mock contact:", values);
+    logger.info("Mock contact:", values);
     toast.success("Message sent (mock).");
     setSent(true);
     form.reset();

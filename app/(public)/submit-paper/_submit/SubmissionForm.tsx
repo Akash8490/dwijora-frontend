@@ -22,6 +22,7 @@ import { TextareaField } from "@/app/components/form/TextareaField";
 import { SelectField } from "@/app/components/form/SelectField";
 import { CheckboxField } from "@/app/components/form/CheckboxField";
 import { FileUploadField } from "@/app/components/form/FileUploadField";
+import { logger } from "@/app/lib/logger";
 import { submissionSchema, splitKeywords, type SubmissionFormValues } from "@/app/utils/schema/submission.schema";
 import type { Category } from "@/app/utils/types/journal.type";
 
@@ -59,7 +60,7 @@ export function SubmissionForm({ categories }: SubmissionFormProps) {
   const onSubmit = form.handleSubmit(async (values) => {
     await new Promise((r) => setTimeout(r, 900));
     const payload = { ...values, keywords: splitKeywords(values.keywords) };
-    console.info("Mock submission:", payload);
+    logger.info("Mock submission:", payload);
     toast.success("Submission received (mock).");
     setSuccess(true);
     form.reset();

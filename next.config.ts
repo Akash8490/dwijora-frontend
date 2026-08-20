@@ -47,6 +47,10 @@ const IMMUTABLE_CACHE = {
 };
 
 const nextConfig: NextConfig = {
+  // `standalone` writes a minimal, self-contained Node server bundle to
+  // .next/standalone — required for the Docker image and useful for any
+  // self-hosted deployment. Vercel ignores this and uses its own runtime.
+  output: "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

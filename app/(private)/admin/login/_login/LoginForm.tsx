@@ -11,6 +11,7 @@ import { Button } from "@/app/components/ui/button";
 import { Form } from "@/app/components/ui/form";
 import { TextField } from "@/app/components/form/TextField";
 import { CheckboxField } from "@/app/components/form/CheckboxField";
+import { logger } from "@/app/lib/logger";
 import { ROUTES } from "@/app/lib/routeEndPoints";
 
 const schema = z.object({
@@ -33,7 +34,7 @@ export function LoginForm() {
   const onSubmit = form.handleSubmit(async (v) => {
     setBusy(true);
     await new Promise((r) => setTimeout(r, 700));
-    console.info("Mock admin login:", v.email);
+    logger.info("Mock admin login:", v.email);
     toast.success("Signed in (mock)");
     router.push(ROUTES.ADMIN);
   });

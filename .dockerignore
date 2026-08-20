@@ -1,0 +1,40 @@
+# Keep the Docker build context small and fast.
+node_modules
+.next
+out
+build
+coverage
+
+# Env files — provide at runtime, not build time.
+.env
+.env.*
+!.env.example
+
+# VCS + editor + OS
+.git
+.gitignore
+.github
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Local Claude Code state
+.claude
+
+# Design-review presentation package — huge, not needed by the site
+design-review
+
+# Lighthouse reports
+perf-report/reports
+
+# Docs + docs-y bits not needed in the runtime image
+docs
+README.md
+DEPLOYMENT.md
+CLAUDE.md
+AGENTS.md
+
+# Log files
+*.log
+npm-debug.log*
