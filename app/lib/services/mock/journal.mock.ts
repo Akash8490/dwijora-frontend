@@ -426,7 +426,7 @@ export const editors: Editor[] = [
     email: "prabhatkasra.bed@spec.edu.in",
     profileUrl:
       "https://www.spec.edu.in/specbed/Staff-Profile.aspx?cid=6&sid=336",
-    photoUrl: null,
+    photoUrl: "/editorial-board/prabhat-m-kasra.jpg",
     // Moved from Chief Editor to Editor per client instruction. Kept at
     // displayOrder 2 so he sits at the top of the Editors grid — the senior
     // editor immediately below the new Chief.
@@ -457,7 +457,7 @@ export const editors: Editor[] = [
     bio: "Dr. Neha J. Nandaniya is an academician and researcher specialising in educational psychology, language education, and educational technology, serving as Assistant Professor at M.B. Patel College of Education, Sardar Patel University. With teaching experience across primary, secondary, and higher education, she has published 15 research papers in UGC CARE-listed and peer-reviewed journals and authored five books. As a research supervisor at Sardar Patel University, she continues to mentor scholars and advance teacher education and innovative pedagogy.",
     email: "nehanandaniya@spuvvn.edu",
     profileUrl: "https://www.spuvvn.edu/team/dr-neha-j-nandaniya/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/neha-j-nandaniya.jpg",
     displayOrder: 2,
   },
   {
@@ -488,7 +488,7 @@ export const editors: Editor[] = [
     bio: "Dr. Dilipbhai J. Vasava is a teacher educator, researcher, and author specialising in Education and Hindi Literature, serving as Assistant Professor at M.B. Patel College of Education, Sardar Patel University, with over 12 years of teaching experience. He has authored 13 books, translated two, and published more than 50 research papers in peer-reviewed and UGC CARE-listed journals, and has guided eight M.Ed. dissertations. A member of several academic bodies including the Sardar Patel University Board of Studies, he has participated in over 100 national and international conferences and workshops as a presenter and keynote speaker.",
     email: null,
     profileUrl: "https://www.spuvvn.edu/team/mr-dilipbhai-j-vasava/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/dilipbhai-j-vasava.jpg",
     displayOrder: 3,
   },
   {
@@ -519,7 +519,7 @@ export const editors: Editor[] = [
     // TODO(client): confirm this is the preferred public email
     email: "ajit970@yahoo.com",
     profileUrl: "https://www.vjbped.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/ajitsinh-r-gohil.jpg",
     displayOrder: 4,
   },
   {
@@ -542,7 +542,7 @@ export const editors: Editor[] = [
     bio: "Dr. Hamis Juma is an education researcher and learning specialist from Tanzania, serving as Head of Research and Innovation at TUSOME. He holds a Doctorate in Education from Gujarat University, and his work focuses on leveraging technology and innovative methodologies to advance education. He has contributed to global organisations including UNESCO, Open Education Global, and 1 Million Teachers, and has published widely on AI-assisted learning, competence-based assessment, and educational transformation.",
     email: "hamis@tusome.ac.tz",
     profileUrl: "https://tz.linkedin.com/in/hamisjuma",
-    photoUrl: null,
+    photoUrl: "/editorial-board/hamis-juma.jpg",
     displayOrder: 5,
   },
   {
@@ -606,7 +606,7 @@ export const editors: Editor[] = [
     ],
     email: "pro.maheshsparsh@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/maheshkumar-parmar-sparsh.jpg",
     displayOrder: 7,
   },
   {
@@ -631,7 +631,7 @@ export const editors: Editor[] = [
     bio: "Dr. Mohsin S. Garana is an academician specialising in Indian Psychology, Clinical Psychology, and Social Psychology, serving as Assistant Professor at Shree J.L.K. Kotecha Arts College, Shree Govind Guru University, Godhra. With over five years of teaching experience, he has contributed to the field through research, mentorship, and academic discourse, focusing on the application of psychological principles in diverse cultural and clinical settings.",
     email: "mohsingarana@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mohsin-garana.jpg",
     displayOrder: 8,
   },
   {
@@ -659,7 +659,7 @@ export const editors: Editor[] = [
     // TODO(client): source link pointed to a shared department page also used
     // for another member — confirm correct profile URL.
     profileUrl: "https://ijpmed.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/nilesh-n-gohil.jpg",
     displayOrder: 9,
   },
   {
@@ -689,7 +689,7 @@ export const editors: Editor[] = [
     bio: "Mr. Parth S. Kapadia is a young academic and Political Science educator with interdisciplinary qualifications, serving as Assistant Professor of Political Science at Maharshi Dayanand Arts and Commerce College. He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. His research focuses on Indian politics, democracy, youth participation, Panchayati Raj, and electoral studies, and he has served as an expert with the Chief Electoral Office, Gujarat.",
     email: null,
     profileUrl: "https://in.linkedin.com/in/parth-kapadia-845800171",
-    photoUrl: null,
+    photoUrl: "/editorial-board/parth-s-kapadia.jpg",
     displayOrder: 2,
   },
   {
@@ -719,7 +719,7 @@ export const editors: Editor[] = [
     // TODO(client): same shared link as another member — confirm correct
     // profile URL.
     profileUrl: "https://ijpmed.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/sanjaykumar-r-thakor.jpg",
     displayOrder: 11,
   },
   {
@@ -767,7 +767,7 @@ export const editors: Editor[] = [
     ],
     email: "mithun.khandwala@cept.ac.in",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mithun-u-khandwala.jpg",
     displayOrder: 12,
   },
   {
