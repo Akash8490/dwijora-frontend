@@ -860,10 +860,6 @@ export const editors: Editor[] = [
   },
   // Chief Editor slot — displayOrder 1 keeps this entry at the top of the
   // "Chief Editor" featured section irrespective of insertion order.
-  // TODO(client): supply full profile for Gopal Bharvad — designation,
-  // affiliation, qualifications, specialisations, bio, institutional email,
-  // profile URL and photo. The fields below are minimal placeholders so the
-  // Chief Editor slot renders while awaiting the complete information.
   {
     id: "bm-16",
     slug: "gopal-bharvad",
@@ -871,15 +867,30 @@ export const editors: Editor[] = [
     role: "editor_in_chief",
     boardGroup: "chief",
     boardRole: "Chief Editor",
-    designation: "Chief Editor, Viśvasaṃvid",
-    affiliation: "Affiliation to be confirmed",
+    designation:
+      "Assistant Professor, M.B. Patel College of Education",
+    affiliation:
+      "M.B. Patel College of Education, Sardar Patel University, Vallabh Vidyanagar, Anand, Gujarat",
     country: "India",
-    qualifications: [],
-    specializations: [],
-    bio: "Dr. Gopal Bharvad serves as the Chief Editor of Viśvasaṃvid, leading the journal's editorial policy and final decisions on manuscripts. A detailed academic profile — qualifications, research interests, publications, and institutional affiliation — will be published here shortly.",
-    email: null,
-    profileUrl: null,
-    photoUrl: null,
+    qualifications: ["Ph.D. (Education), Sardar Patel University"],
+    specializations: [
+      "Education & Educational Research",
+      "Teacher Training",
+      "Pedagogy of Social Science",
+      "Assessment & Evaluation",
+      "Educational Psychology",
+      "Curriculum Development",
+      "Guidance & Counselling",
+      "Higher Education",
+      "National Education Policy (NEP) 2020",
+    ],
+    bio: "Dr. Gopal Bharvad is a dedicated academician and researcher with expertise in Education, Political Science, Teacher Education and Educational Psychology, and serves as Chief Editor of Viśvasaṃvid. He is Assistant Professor at M.B. Patel College of Education, Sardar Patel University, Vallabh Vidyanagar, where he contributes to teacher training, curriculum development and educational research. He holds a Ph.D. in Education from Sardar Patel University and has made significant scholarly contributions through 31+ research publications, books and conference presentations. His work explores assessment and evaluation, teaching–learning methodologies, social sciences education and contemporary educational policies, with a strong focus on the National Education Policy (NEP) 2020, guidance and counselling, and student development. He has authored several books, including 'Divine Aptitude', 'Mental Soundness & Sickness', and 'Self Personality and Betterment of Adolescents in Respect to Family Size'; his research papers have appeared in leading national and international journals, contributing valuable insights into educational psychology, student success, and innovative teaching strategies.",
+    email: "gopalbharvad@spuvvn.edu",
+    profileUrl:
+      "https://www.spuvvn.edu/team/dr-gopalbhai-bathabhai-bharvad/",
+    // TODO(client): supply a higher-resolution portrait — the current
+    // 225×300 crop was extracted from the profile PDF and is small.
+    photoUrl: "/editorial-board/gopal-bharvad.jpg",
     displayOrder: 1,
   },
 ];
