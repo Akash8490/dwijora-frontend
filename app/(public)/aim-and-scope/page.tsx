@@ -42,13 +42,16 @@ const ICON_BY_SLUG: Record<string, React.ReactNode> = {
   interdisciplinary: <LayersIcon className="h-5 w-5" />,
 };
 
-const LANGUAGES = ["English", "Hindi", "Gujarati"];
+const LANGUAGES = ["Multi Language"];
 const CONTRIBUTION_TYPES = [
   "Research articles",
   "Review papers",
   "Case studies",
   "Book reviews",
   "Interdisciplinary studies",
+  "Seminar papers",
+  "Conference papers",
+  "Special issues",
 ];
 
 async function ScopeContent() {
@@ -81,10 +84,11 @@ async function ScopeContent() {
             <h2>Scope</h2>
             <p>
               The journal welcomes research articles, review papers, case
-              studies, book reviews, and interdisciplinary studies that
-              address contemporary challenges and advance human
-              understanding. Embracing linguistic diversity, contributions
-              are accepted in English, Hindi, and Gujarati.
+              studies, book reviews, interdisciplinary studies, seminar
+              and conference papers, and special issues that address
+              contemporary challenges and advance human understanding.
+              Embracing linguistic diversity, contributions are accepted
+              in multiple languages.
             </p>
 
             {/* TODO(client): supply detailed, per-discipline aim & scope copy
@@ -99,12 +103,11 @@ async function ScopeContent() {
           </Prose>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {categories.map((c) => (
+            {categories?.map((c) => (
               <FeatureCard
                 key={c.id}
                 icon={ICON_BY_SLUG[c.slug] ?? <LayersIcon className="h-5 w-5" />}
                 title={c.name}
-                description={c.description ?? ""}
               />
             ))}
           </div>
@@ -123,7 +126,7 @@ async function ScopeContent() {
               <p className="text-xs font-semibold uppercase tracking-wider">Languages published</p>
             </div>
             <p className="mt-3 text-sm text-brand-muted">
-              Scholarly contributions are welcomed in three languages so
+              Scholarly contributions are welcomed in multiple languages so
               research can reach the audiences it belongs to.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -160,7 +163,7 @@ function ScopeSkeleton() {
     <Container className="py-16">
       <Skeleton className="h-10 w-1/2" />
       <div className="mt-8 grid gap-4 md:grid-cols-2">
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2, 3]?.map((i) => (
           <Skeleton key={i} className="h-40 rounded-xl" />
         ))}
       </div>

@@ -78,17 +78,53 @@ export default async function ContactPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-4 w-4 text-brand-primary" aria-hidden />
-                  <a
-                    href={`mailto:${meta.contactEmail}`}
-                    className="text-brand-ink hover:text-brand-accent-deep"
-                  >
-                    {meta.contactEmail}
-                  </a>
+                  <span className="text-brand-ink">
+                    <a
+                      href={`mailto:${meta.contactEmail}`}
+                      className="hover:text-brand-accent-deep"
+                    >
+                      {meta.contactEmail}
+                    </a>
+                    <span className="block text-xs text-brand-muted">
+                      Editorial office
+                    </span>
+                  </span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="mt-0.5 h-4 w-4 text-brand-primary" aria-hidden />
-                  <span className="text-brand-ink">{meta.contactPhone}</span>
-                </li>
+                {meta.publisherEmail ? (
+                  <li className="flex items-start gap-3">
+                    <Mail
+                      className="mt-0.5 h-4 w-4 text-brand-primary"
+                      aria-hidden
+                    />
+                    <span className="text-brand-ink">
+                      <a
+                        href={`mailto:${meta.publisherEmail}`}
+                        className="hover:text-brand-accent-deep"
+                      >
+                        {meta.publisherEmail}
+                      </a>
+                      <span className="block text-xs text-brand-muted">
+                        Publisher &mdash; direct
+                      </span>
+                    </span>
+                  </li>
+                ) : null}
+                {meta.contactPhone ? (
+                  <li className="flex items-start gap-3">
+                    <Phone
+                      className="mt-0.5 h-4 w-4 text-brand-primary"
+                      aria-hidden
+                    />
+                    <span className="text-brand-ink">
+                      <a
+                        href={`tel:${meta.contactPhone.replace(/[^\d+]/g, "")}`}
+                        className="hover:text-brand-accent-deep"
+                      >
+                        {meta.contactPhone}
+                      </a>
+                    </span>
+                  </li>
+                ) : null}
               </ul>
             </div>
 

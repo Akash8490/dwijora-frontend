@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/about",
 });
 
-const LANGUAGES = ["English", "Hindi", "Gujarati"];
+const LANGUAGES = ["Multi Language"];
 const CONTRIBUTION_TYPES = [
   "Research articles",
   "Review papers",
@@ -93,8 +93,8 @@ async function AboutContent() {
               innovative ideas, original research, and critical perspectives.
               Embracing linguistic diversity,{" "}
               <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}publishes scholarly contributions in English, Hindi, and
-              Gujarati, encouraging inclusive academic participation and
+              {" "}publishes scholarly contributions in multiple languages,
+              encouraging inclusive academic participation and
               cross-cultural knowledge exchange. The journal welcomes research
               articles, review papers, case studies, book reviews, and
               interdisciplinary studies that address contemporary challenges
@@ -126,10 +126,19 @@ async function AboutContent() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <StatCard label="Editor-in-Chief" value={meta.editorInChief} hint="Institute of Multidisciplinary Research & Journals" icon={<Users className="h-4 w-4" />} />
-            <StatCard label="Publisher" value={meta.publisher} hint="IMRJ, India" icon={<BookOpen className="h-4 w-4" />} />
+            <StatCard label="Editor-in-Chief" value={meta.editorInChief} hint="Sardar Patel University, Vallabh Vidyanagar, Gujarat" icon={<Users className="h-4 w-4" />} />
+            <StatCard label="Publisher" value={meta.publisher} hint="Bopal, Ahmedabad, Gujarat, India" icon={<BookOpen className="h-4 w-4" />} />
             <StatCard label="Frequency" value={meta.frequency.split(" (")[0]} hint={meta.frequency} icon={<Award className="h-4 w-4" />} />
-            <StatCard label="ISSN / e-ISSN" value={`${meta.issn} / ${meta.eIssn}`} hint="Placeholder — pending registration" icon={<FileCheck2 className="h-4 w-4" />} />
+            <StatCard
+              label="ISSN / e-ISSN"
+              value={
+                meta.issn || meta.eIssn
+                  ? `${meta.issn ?? "Applied for"} / ${meta.eIssn ?? "Applied for"}`
+                  : "Applied for"
+              }
+              hint="Assigned identifiers will appear here once ISSN India completes the registration."
+              icon={<FileCheck2 className="h-4 w-4" />}
+            />
           </div>
         </div>
       </Section>

@@ -17,26 +17,30 @@ export const journalMeta: JournalMeta = {
   shloka: BRAND.shlokaDeva,
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
-  // TODO(client): replace ISSN placeholders once assigned by CSIR-NIScPR.
-  issn: "0000-0000",
-  eIssn: "0000-000X",
-  publisher: "Mr. Siddhant Boliya",
-  // TODO(client): supply the full postal address of the publishing body
-  // (street, city, state, PIN, country) — required by ISSN India Point 2.
+  // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
+  // Until then keep as `null` — the site renders "Applied for" wherever
+  // these fields display. NEVER put a 0000-shaped placeholder here: ISSN
+  // India treats fake-looking identifiers as a predatory-journal red flag,
+  // and a fabricated `citation_issn` on paper pages would poison Google
+  // Scholar's index. First 2 issues + ≥5 articles/issue are required
+  // before the ISSN application can be submitted (per ISSN Publisher FAQ).
+  issn: null,
+  eIssn: null,
+  publisher: "Mr. Siddhant Boriya",
   publisherAddress:
-    "Institute of Multidisciplinary Research & Journals (IMRJ), India",
+    "B/23, Maruti Nandan Vill-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
+  publisherEmail: "siddhantboriya7818@gmail.com",
   editorInChief: "Dr. Gopal Bharvad",
   contactEmail: "visvasamvidimrj@gmail.com",
-  // TODO(client): supply a public contact phone.
-  contactPhone: "+91 00000 00000",
-  address: "IMRJ, India",
+  contactPhone: "+91 87350 13858",
+  address: "Bopal, Ahmedabad, Gujarat, India",
   frequency: "Quarterly (4 issues per year)",
   scope:
     "Education, humanities, social sciences, sciences, technology, management and interdisciplinary research.",
   startingYear: 2026,
   publicationFormat: "Online",
   subject: "Multidisciplinary — Education and Research",
-  languages: ["English", "Hindi", "Gujarati"],
+  languages: ["Multi Language"],
 };
 
 export const categories: Category[] = [
@@ -235,8 +239,8 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    10,
-    16,
+    11,
+    17,
     "2026-08-01",
   ),
   P(
@@ -256,7 +260,7 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    17,
+    18,
     24,
     "2026-08-01",
   ),
@@ -278,7 +282,7 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    24,
+    25,
     35,
     "2026-08-01",
     {
@@ -433,6 +437,8 @@ export const editors: Editor[] = [
     role: "associate_editor",
     boardGroup: "editor",
     boardRole: "Editor",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -458,6 +464,8 @@ export const editors: Editor[] = [
     email: "nehanandaniya@spuvvn.edu",
     profileUrl: "https://www.spuvvn.edu/team/dr-neha-j-nandaniya/",
     photoUrl: "/editorial-board/neha-j-nandaniya.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -489,6 +497,8 @@ export const editors: Editor[] = [
     email: null,
     profileUrl: "https://www.spuvvn.edu/team/mr-dilipbhai-j-vasava/",
     photoUrl: "/editorial-board/dilipbhai-j-vasava.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 3,
   },
   {
@@ -520,6 +530,8 @@ export const editors: Editor[] = [
     email: "ajit970@yahoo.com",
     profileUrl: "https://www.vjbped.ac.in/",
     photoUrl: "/editorial-board/ajitsinh-r-gohil.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 4,
   },
   {
@@ -543,6 +555,8 @@ export const editors: Editor[] = [
     email: "hamis@tusome.ac.tz",
     profileUrl: "https://tz.linkedin.com/in/hamisjuma",
     photoUrl: "/editorial-board/hamis-juma.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 5,
   },
   {
@@ -575,19 +589,19 @@ export const editors: Editor[] = [
     email: "edgar.nderego@out.ac.tz",
     profileUrl: null,
     photoUrl: "/editorial-board/edgar-fidel-nderego.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 6,
   },
   {
     id: "bm-07",
     slug: "maheshkumar-parmar-sparsh",
     fullName: "Dr. Maheshkumar Parmar 'Sparsh'",
-    role: "review_board",
-    boardGroup: "associate",
-    boardRole: "Associate Editor & Reviewer",
+    role: "associate_editor",
+    boardGroup: "editor",
+    boardRole: "Editor",
     designation: "Principal (I/C) & Assistant Professor of Gujarati",
-    // TODO(client): source files list two locations (Godhra and Govt. Arts
-    // College, Vav) — confirm current posting.
-    affiliation: "Government Arts and Science College, Godhra, Gujarat",
+    affiliation: "Government Arts and Science College, Godhar, Gujarat",
     country: "India",
     qualifications: [],
     specializations: [
@@ -595,7 +609,7 @@ export const editors: Editor[] = [
       "Education",
       "Curriculum Development",
     ],
-    bio: "Dr. Maheshkumar Parmar 'Sparsh' is an educator, researcher, author, and academic leader, currently serving as Principal (I/C) and Assistant Professor of Gujarati at Government Arts and Science College, Godhra. A prolific writer, he has authored over 25 books, with literary works incorporated into school textbooks in Gujarat and Maharashtra, and has served on textbook writing committees and the State Resource Group. He also actively promotes environmental awareness, community service, and educational innovation.",
+    bio: "Dr. Maheshkumar Parmar 'Sparsh' is an educator, researcher, author, and academic leader, currently serving as Principal (I/C) and Assistant Professor of Gujarati at Government Arts and Science College, Godhar. A prolific writer, he has authored over 25 books, with literary works incorporated into school textbooks in Gujarat and Maharashtra, and has served on textbook writing committees and the State Resource Group. He also actively promotes environmental awareness, community service, and educational innovation.",
     honours: [
       "State Best Teacher Award",
       "NCERT National Award",
@@ -607,6 +621,8 @@ export const editors: Editor[] = [
     email: "pro.maheshsparsh@gmail.com",
     profileUrl: null,
     photoUrl: "/editorial-board/maheshkumar-parmar-sparsh.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 7,
   },
   {
@@ -632,6 +648,8 @@ export const editors: Editor[] = [
     email: "mohsingarana@gmail.com",
     profileUrl: null,
     photoUrl: "/editorial-board/mohsin-garana.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 8,
   },
   {
@@ -660,24 +678,27 @@ export const editors: Editor[] = [
     // for another member — confirm correct profile URL.
     profileUrl: "https://ijpmed.ac.in/",
     photoUrl: "/editorial-board/nilesh-n-gohil.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 9,
   },
   {
     id: "bm-10",
     slug: "parth-s-kapadia",
-    fullName: "Mr. Parth S. Kapadia",
+    fullName: "Mr. Parth Sureshkumar Kapadia",
     role: "deputy_chief_editor",
     boardGroup: "deputy-chief",
     boardRole: "Deputy Chief Editor",
     designation: "Assistant Professor of Political Science",
-    affiliation: "Maharshi Dayanand Arts and Commerce College, Gujarat",
+    affiliation:
+      "Maharshi Dayananda Arts and Commerce College, Baspa, Gujarat",
     country: "India",
     qualifications: [
       "B.E. (Mechanical Engineering)",
       "M.A. (Political Science with Gandhian Studies), IGNOU",
       "GSET",
       "UGC-NET",
-      "Ph.D. (Political Science) — pursuing",
+      "Ph.D. (Political Science) — pursuing, Hemchandracharya North Gujarat University",
     ],
     specializations: [
       "Indian Politics",
@@ -685,11 +706,30 @@ export const editors: Editor[] = [
       "Rural Development",
       "Panchayati Raj",
       "Electoral Studies",
+      "Dr. B.R. Ambedkar's Political Thought",
     ],
-    bio: "Mr. Parth S. Kapadia is a young academic and Political Science educator with interdisciplinary qualifications, serving as Assistant Professor of Political Science at Maharshi Dayanand Arts and Commerce College. He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. His research focuses on Indian politics, democracy, youth participation, Panchayati Raj, and electoral studies, and he has served as an expert with the Chief Electoral Office, Gujarat.",
+    bio: "Mr. Parth Sureshkumar Kapadia is a young academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa (from January 2026). He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India' (April 2026). He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with seven+ publications in academic journals.",
+    positions: [
+      "Assistant Professor of Political Science — Maharshi Dayananda Arts and Commerce College, Baspa (2026–present)",
+      "Expert Lecturer (NET/SLET/JRF), Department of Political Science, Gujarat University (January 2026)",
+      "Joint Coordinator, Department of Political Science, Gujarat University",
+      "Thematic Expert — IICDEM (International IDEA / IIIDEM / Election Commission of India), Bharat Mandapam, New Delhi",
+      "Thematic Expert — IIIDEM, 'AI and Election: Innovation, Integrity and Institutional Preparedness'",
+    ],
+    publications: [
+      "'A Young India's Village: Challenges and Opportunities in Indian Politics', Research and Innovations in Multidisciplinary Subjects (ISBN 978-93-92926-45-7), 2025",
+      "'The Indian Villages: Cornerstone of Viksit Bharat 2047', Atmaj Academic Research Journal (ISSN 2348-9456), 2025",
+      "'Youth in Indian Politics: Visionary Leaders for the Next Generation', Soham Journal (ISSN 2350-0697), 2024",
+      "'Indian Youth and Educational System', Sanshodhanani Pa Pa Pagali (ISBN 978-93-5879-919-4), 2024",
+      "'Role of Youth in Politics: A Comparative Analysis of Urban and Rural India', SETU (ISSN 3108-3013), 2026",
+      "'The Rise of Women in Panchayats: Challenges and Opportunities', Soham Journal (ISSN 2350-0697), 2025",
+      "'The Role of Youth in Strengthening Bharat: A Social and Political Perspective', Samvid Multidisciplinary Research Journal (ISSN 2582-015X), 2025",
+    ],
     email: null,
     profileUrl: "https://in.linkedin.com/in/parth-kapadia-845800171",
     photoUrl: "/editorial-board/parth-s-kapadia.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -720,17 +760,17 @@ export const editors: Editor[] = [
     // profile URL.
     profileUrl: "https://ijpmed.ac.in/",
     photoUrl: "/editorial-board/sanjaykumar-r-thakor.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 11,
   },
   {
     id: "bm-12",
     slug: "mithun-u-khandwala",
     fullName: "Dr. Mithun U. Khandwala",
-    // TODO(client): confirm this member's exact role/group — the source file
-    // did not specify a role for this journal.
-    role: "associate_editor",
-    boardGroup: "editor",
-    boardRole: "Editorial Board Member",
+    role: "review_board",
+    boardGroup: "associate",
+    boardRole: "Associate Editor & Reviewer",
     designation:
       "Founder, Knowlistic World Learning Foundation; ELT Educator & Teacher Trainer",
     affiliation: "Knowlistic World Learning Foundation",
@@ -768,6 +808,8 @@ export const editors: Editor[] = [
     email: "mithun.khandwala@cept.ac.in",
     profileUrl: null,
     photoUrl: "/editorial-board/mithun-u-khandwala.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 12,
   },
   {
@@ -801,6 +843,8 @@ export const editors: Editor[] = [
     email: "mahesh17585@gmail.com",
     profileUrl: null,
     photoUrl: null,
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 13,
   },
   {
@@ -820,6 +864,8 @@ export const editors: Editor[] = [
     profileUrl: null,
     // TODO(client): add photo -> public/editorial-board/anand-pandya.jpg
     photoUrl: null,
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 14,
   },
   {
@@ -891,6 +937,8 @@ export const editors: Editor[] = [
     // TODO(client): supply a higher-resolution portrait — the current
     // 225×300 crop was extracted from the profile PDF and is small.
     photoUrl: "/editorial-board/gopal-bharvad.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 1,
   },
 ];

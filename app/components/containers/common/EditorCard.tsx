@@ -73,6 +73,14 @@ function CompactInner({ editor }: { editor: Editor }) {
           {editor.affiliation}
         </p>
         <p className="mt-0.5 text-xs text-brand-muted">{editor.country}</p>
+        <p className="mt-1 text-[11px] text-brand-muted break-all">
+          <span className="font-medium text-brand-ink/70">ORCID:</span>{" "}
+          {editor.orcid ? (
+            <span className="text-brand-primary">{editor.orcid}</span>
+          ) : (
+            <span className="italic">Pending</span>
+          )}
+        </p>
       </div>
     </>
   );
@@ -101,6 +109,22 @@ function FeaturedInner({ editor }: { editor: Editor }) {
         </p>
         <p className="mt-1 text-sm text-brand-muted">{editor.affiliation}</p>
         <p className="mt-0.5 text-sm text-brand-muted">{editor.country}</p>
+        <p className="mt-2 text-xs text-brand-muted break-all">
+          <span className="font-medium text-brand-ink/70">ORCID iD:</span>{" "}
+          {editor.orcid ? (
+            <a
+              href={`https://orcid.org/${editor.orcid}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+            >
+              {editor.orcid}
+            </a>
+          ) : (
+            <span className="italic">Awaiting confirmation</span>
+          )}
+        </p>
         {editor.specializations?.length ? (
           <p className="mt-4 text-sm text-brand-ink/80">
             <span className="text-brand-muted">Specialisations · </span>

@@ -100,7 +100,7 @@ export function SubmissionForm({ categories }: SubmissionFormProps) {
               name="phone"
               label="Phone"
               type="tel"
-              placeholder="+91 00000 00000"
+              placeholder="+91 XXXXX XXXXX"
               autoComplete="tel"
               requiredMark
             />

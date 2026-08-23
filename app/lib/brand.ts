@@ -15,9 +15,12 @@ export const BRAND = {
   /** Full brand lockup line — Devanagari + roman + gloss (en dash `–`). */
   nameFull:
     "विश्वसंविद् (Viśvasaṃvid) – Universal Consciousness & Knowledge",
-  /** Editorial subtitle used on the lockup and header tagline. */
-  subtitle:
-    "An International Multidisciplinary Journal of Education and Research",
+  /** Editorial subtitle used on the lockup and header tagline. This is the
+   *  canonical short form used directly under the journal name in the brand
+   *  lockup. Longer descriptive prose (e.g. `metaDescription`, `footerBlurb`)
+   *  keeps the fuller "of education and research" phrasing because those
+   *  fields describe scope, not the brand lockup line. */
+  subtitle: "An International Multidisciplinary Journal",
   /** Canonical shloka — includes the trailing daṇḍa `।`. */
   shlokaDeva: "आ नो भद्राः क्रतवो यन्तु विश्वतः।",
   /** IAST transliteration of the shloka. */
@@ -28,10 +31,10 @@ export const BRAND = {
   shlokaSource: "Ṛgveda I.89.1",
   /** Site-wide short meta description (used by SEO). */
   metaDescription:
-    "विश्वसंविद् (Viśvasaṃvid) is an international, peer-reviewed, multidisciplinary journal of education and research, publishing in English, Hindi, and Gujarati.",
+    "विश्वसंविद् (Viśvasaṃvid) is an international, peer-reviewed, multilingual, multidisciplinary journal of education and research.",
   /** Footer/lockup blurb — one sentence. */
   footerBlurb:
-    "An international, peer-reviewed, multidisciplinary journal promoting excellence in education, research, and scholarly dialogue — publishing in English, Hindi, and Gujarati.",
+    "An international, peer-reviewed, multilingual, multidisciplinary journal promoting excellence in education, research, and scholarly dialogue.",
 } as const;
 
 export type Brand = typeof BRAND;
