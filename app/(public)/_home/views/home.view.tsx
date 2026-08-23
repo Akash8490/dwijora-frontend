@@ -223,8 +223,8 @@ export function HomeView({ data }: HomeViewProps) {
             <Sanskrit>{BRAND.nameDeva}</Sanskrit>
             {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
             is an international, peer-reviewed, multidisciplinary journal
-            dedicated to promoting excellence in education, research, and
-            scholarly dialogue across diverse fields of knowledge. The
+            dedicated to promoting scholarly excellence and dialogue across
+            diverse fields of knowledge. The
             journal provides a dynamic platform for researchers, academicians,
             educators, professionals, and students to share innovative ideas,
             original research, and critical perspectives.

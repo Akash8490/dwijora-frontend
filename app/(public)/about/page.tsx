@@ -53,7 +53,7 @@ async function AboutContent() {
             {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
           </>
         }
-        subtitle="An international, peer-reviewed, multidisciplinary journal of education and research."
+        subtitle="An international, peer-reviewed, multidisciplinary journal welcoming scholarly work across every field of knowledge."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About" },
@@ -86,8 +86,8 @@ async function AboutContent() {
               <Sanskrit>{BRAND.nameDeva}</Sanskrit>
               {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
               is an international, peer-reviewed, multidisciplinary journal
-              dedicated to promoting excellence in education, research, and
-              scholarly dialogue across diverse fields of knowledge. The
+              dedicated to promoting scholarly excellence and dialogue
+              across diverse fields of knowledge. The
               journal provides a dynamic platform for researchers,
               academicians, educators, professionals, and students to share
               innovative ideas, original research, and critical perspectives.

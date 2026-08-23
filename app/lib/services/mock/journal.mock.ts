@@ -39,7 +39,7 @@ export const journalMeta: JournalMeta = {
     "Education, humanities, social sciences, sciences, technology, management and interdisciplinary research.",
   startingYear: 2026,
   publicationFormat: "Online",
-  subject: "Multidisciplinary — Education and Research",
+  subject: "Multidisciplinary — All Fields of Knowledge",
   languages: ["Multi Language"],
 };
 
