@@ -59,7 +59,7 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
 
             <section className="mt-10">
               <h3 className="font-display text-xl text-brand-ink">About</h3>
-              <p className="mt-3 text-brand-ink/85 leading-relaxed">
+              <p className="mt-3 text-brand-ink/85 leading-relaxed text-justify [text-align-last:left] hyphens-auto">
                 {member.bio}
               </p>
             </section>
