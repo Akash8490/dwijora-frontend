@@ -698,7 +698,6 @@ export const editors: Editor[] = [
       "M.A. (Political Science with Gandhian Studies), IGNOU",
       "GSET",
       "UGC-NET",
-      "Ph.D. (Political Science) — pursuing, Hemchandracharya North Gujarat University",
     ],
     specializations: [
       "Indian Politics",
@@ -708,7 +707,7 @@ export const editors: Editor[] = [
       "Electoral Studies",
       "Dr. B.R. Ambedkar's Political Thought",
     ],
-    bio: "Mr. Parth Sureshkumar Kapadia is a young academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa (from January 2026). He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India' (April 2026). He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with seven+ publications in academic journals.",
+    bio: "Mr. Parth Sureshkumar Kapadia is an academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa. He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU) and has qualified GSET and UGC-NET. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India'. He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with several publications in academic journals.",
     positions: [
       "Assistant Professor of Political Science — Maharshi Dayananda Arts and Commerce College, Baspa (2026–present)",
       "Expert Lecturer (NET/SLET/JRF), Department of Political Science, Gujarat University (January 2026)",
