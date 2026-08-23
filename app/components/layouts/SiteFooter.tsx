@@ -6,6 +6,11 @@ import { AccentRule } from "@/app/components/containers/common/AccentRule";
 import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { BRAND } from "@/app/lib/brand";
 import { ROUTES } from "@/app/lib/routeEndPoints";
+import { journalMeta } from "@/app/lib/services/mock/journal.mock";
+
+function issnLabel(v: string | null): string {
+  return v && v.length > 0 ? v : "Applied for";
+}
 
 const QUICK_LINKS = [
   { label: "About", href: ROUTES.ABOUT },
@@ -100,18 +105,24 @@ export function SiteFooter() {
                   visvasamvidimrj@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-brand-accent" aria-hidden />
-                <span>+91 00000 00000</span>
-              </li>
+              {journalMeta.contactPhone ? (
+                <li className="flex items-start gap-2">
+                  <Phone className="mt-0.5 h-4 w-4 text-brand-accent" aria-hidden />
+                  <span>{journalMeta.contactPhone}</span>
+                </li>
+              ) : null}
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 text-brand-accent" aria-hidden />
-                <span>Publisher: Mr. Siddhant Boliya · IMRJ, India</span>
+                <span>
+                  Publisher: {journalMeta.publisher}
+                  <br />
+                  {journalMeta.publisherAddress}
+                </span>
               </li>
             </ul>
             <div className="mt-6">
               <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
-                Indexed with
+                Indexing applications in progress
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {INDEXING.map((i) => (
@@ -129,7 +140,9 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/60 md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Viśvasaṃvid · ISSN 0000-0000 · e-ISSN 0000-000X
+            © {new Date().getFullYear()} Viśvasaṃvid · ISSN:{" "}
+            {issnLabel(journalMeta.issn)} · e-ISSN:{" "}
+            {issnLabel(journalMeta.eIssn)}
           </p>
           <p>
             Designed with care · Published by Institute of Multidisciplinary Research & Journals

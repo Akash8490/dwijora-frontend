@@ -1,5 +1,11 @@
 import { Mail, Megaphone } from "lucide-react";
 import { Container } from "@/app/components/containers/common/Container";
+import { journalMeta } from "@/app/lib/services/mock/journal.mock";
+
+/** Format ISSN for display: real number when assigned, "Applied for" otherwise. */
+function formatIssn(v: string | null): string {
+  return v && v.length > 0 ? v : "Applied for";
+}
 
 export function TopBar() {
   return (
@@ -14,7 +20,10 @@ export function TopBar() {
           <span aria-hidden className="text-white/40">
             ·
           </span>
-          <span>ISSN 0000-0000 · e-ISSN 0000-000X</span>
+          <span>
+            ISSN: {formatIssn(journalMeta.issn)} · e-ISSN:{" "}
+            {formatIssn(journalMeta.eIssn)}
+          </span>
         </span>
         <a
           href="mailto:visvasamvidimrj@gmail.com"

@@ -119,7 +119,10 @@ export interface Editor {
   email?: string | null;
   profileUrl?: string | null;
   photoUrl?: string | null;
-  orcid?: string;
+  /** ORCID iD (formatted `0000-0000-0000-0000`). Required by ISSN India for
+   *  every listed board member. `null` means we do not yet have the iD from
+   *  the member and it must be collected before publication. */
+  orcid: string | null;
   /** Rank within the board (lower = earlier). */
   displayOrder: number;
 }
@@ -156,16 +159,28 @@ export interface JournalMeta {
   shloka: string;
   shlokaTranslation: string;
   tagline: string;
-  issn: string;
-  eIssn: string;
+  /** Print ISSN once assigned by CSIR-NIScPR. `null` until then — the site
+   *  renders "Applied for" wherever this is displayed rather than showing a
+   *  fake 0000-shaped placeholder (an ISSN India predatory-journal red flag). */
+  issn: string | null;
+  /** Online e-ISSN once assigned. Same null-means-"Applied for" contract as
+   *  `issn`. Google Scholar's `citation_issn` meta tag is only emitted when
+   *  non-null — a fabricated ISSN there would poison Scholar's index. */
+  eIssn: string | null;
   publisher: string;
-  /** Full postal address of the publishing body, printed in the footer and on
-   *  Contact/About. Kept as a single formatted string so multi-line values
-   *  render correctly across the site. */
+  /** Full postal address of the publishing body / registered proprietor,
+   *  printed in the footer and on Contact/About. Kept as a single formatted
+   *  string so multi-line values render correctly across the site. */
   publisherAddress: string;
+  /** Direct email for the publisher/proprietor. Separate from the editorial
+   *  office `contactEmail` so ISSN India and CrossRef reviewers can verify
+   *  legal identity. `null` when only the editorial email is available. */
+  publisherEmail: string | null;
   editorInChief: string;
   contactEmail: string;
-  contactPhone: string;
+  /** Editorial office phone. `null` until a real number is supplied; the site
+   *  hides the phone row rather than printing "+91 00000 00000" placeholders. */
+  contactPhone: string | null;
   address: string;
   frequency: string;
   scope: string;

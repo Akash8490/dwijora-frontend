@@ -31,8 +31,18 @@ export function JournalParticularsTable({
     },
     { label: "Subtitle", value: meta.tagline },
     { label: "Frequency", value: meta.frequency },
-    { label: "ISSN (Print)", value: meta.issn },
-    { label: "ISSN (Online)", value: meta.eIssn },
+    {
+      label: "ISSN (Print)",
+      value: meta.issn ?? (
+        <span className="italic text-brand-muted">Applied for</span>
+      ),
+    },
+    {
+      label: "ISSN (Online)",
+      value: meta.eIssn ?? (
+        <span className="italic text-brand-muted">Applied for</span>
+      ),
+    },
     { label: "Publisher name", value: meta.publisher },
     { label: "Publisher address", value: meta.publisherAddress },
     { label: "Editor-in-Chief", value: meta.editorInChief },
@@ -51,7 +61,14 @@ export function JournalParticularsTable({
         </a>
       ),
     },
-    { label: "Phone", value: meta.contactPhone },
+    {
+      label: "Phone",
+      value: meta.contactPhone ?? (
+        <span className="italic text-brand-muted">
+          To be published shortly
+        </span>
+      ),
+    },
   ];
 
   return (

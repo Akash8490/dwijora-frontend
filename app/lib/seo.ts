@@ -16,7 +16,7 @@ const APP_KEYWORDS = [
   "education research",
   "peer-reviewed",
   "open access",
-  "English Hindi Gujarati journal",
+  "multilingual journal",
   "IMRJ",
 ];
 
@@ -26,7 +26,7 @@ const OG_IMAGE = {
   url: "/opengraph-image.png",
   width: 1200,
   height: 630,
-  alt: "Viśvasaṃvid — Universal Consciousness & Knowledge · International Multidisciplinary Journal of Education and Research",
+  alt: "Viśvasaṃvid — Universal Consciousness & Knowledge · An International Multidisciplinary Journal",
 };
 
 export const defaultMetadata: Metadata = {

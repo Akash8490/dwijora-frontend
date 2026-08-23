@@ -27,10 +27,14 @@ export function buildCitationMeta(input: {
     citation_firstpage: String(paper.pageStart),
     citation_lastpage: String(paper.pageEnd),
     citation_pdf_url: pdfUrl,
-    citation_issn: meta.issn,
     citation_language: language,
     citation_keywords: paper.keywords.join("; "),
   };
+  // Only emit `citation_issn` and `citation_doi` when we actually hold the
+  // identifier. Google Scholar treats these as authoritative; emitting a
+  // placeholder ISSN (e.g. "0000-0000") would poison Scholar's index.
+  const issnForScholar = meta.eIssn ?? meta.issn;
+  if (issnForScholar) other.citation_issn = issnForScholar;
   if (paper.doi) other.citation_doi = paper.doi;
 
   const jsonLd = {
@@ -59,7 +63,8 @@ export function buildCitationMeta(input: {
         isPartOf: {
           "@type": "Periodical",
           name: meta.name,
-          issn: meta.issn,
+          // JSON-LD `issn` only when we hold a real one — see comment above.
+          ...(issnForScholar ? { issn: issnForScholar } : {}),
         },
       },
     },

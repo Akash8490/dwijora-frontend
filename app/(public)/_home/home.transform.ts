@@ -71,7 +71,10 @@ export function transformHomeData(input: {
       papers: allPapersCount,
       issues: allIssuesCount,
       volumes: volumes.length,
-      authors: uniqueAuthors.size + 40,
+      // Real count only. Do NOT inflate with a constant here — fabricated
+      // stats on an academic journal site are an ISSN India / DOAJ / UGC-CARE
+      // integrity flag (same family as fake ISSN placeholders).
+      authors: uniqueAuthors.size,
     },
   };
 }

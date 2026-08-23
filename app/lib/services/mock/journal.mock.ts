@@ -17,26 +17,30 @@ export const journalMeta: JournalMeta = {
   shloka: BRAND.shlokaDeva,
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
-  // TODO(client): replace ISSN placeholders once assigned by CSIR-NIScPR.
-  issn: "0000-0000",
-  eIssn: "0000-000X",
-  publisher: "Mr. Siddhant Boliya",
-  // TODO(client): supply the full postal address of the publishing body
-  // (street, city, state, PIN, country) — required by ISSN India Point 2.
+  // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
+  // Until then keep as `null` — the site renders "Applied for" wherever
+  // these fields display. NEVER put a 0000-shaped placeholder here: ISSN
+  // India treats fake-looking identifiers as a predatory-journal red flag,
+  // and a fabricated `citation_issn` on paper pages would poison Google
+  // Scholar's index. First 2 issues + ≥5 articles/issue are required
+  // before the ISSN application can be submitted (per ISSN Publisher FAQ).
+  issn: null,
+  eIssn: null,
+  publisher: "Mr. Siddhant Boriya",
   publisherAddress:
-    "Institute of Multidisciplinary Research & Journals (IMRJ), India",
+    "B/23, Maruti Nandan Vill-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
+  publisherEmail: "siddhantboriya7818@gmail.com",
   editorInChief: "Dr. Gopal Bharvad",
   contactEmail: "visvasamvidimrj@gmail.com",
-  // TODO(client): supply a public contact phone.
-  contactPhone: "+91 00000 00000",
-  address: "IMRJ, India",
+  contactPhone: "+91 87350 13858",
+  address: "Bopal, Ahmedabad, Gujarat, India",
   frequency: "Quarterly (4 issues per year)",
   scope:
     "Education, humanities, social sciences, sciences, technology, management and interdisciplinary research.",
   startingYear: 2026,
   publicationFormat: "Online",
   subject: "Multidisciplinary — Education and Research",
-  languages: ["English", "Hindi", "Gujarati"],
+  languages: ["Multi Language"],
 };
 
 export const categories: Category[] = [
@@ -235,8 +239,8 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    10,
-    16,
+    11,
+    17,
     "2026-08-01",
   ),
   P(
@@ -256,7 +260,7 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    17,
+    18,
     24,
     "2026-08-01",
   ),
@@ -278,7 +282,7 @@ export const papers: Paper[] = [
     "c1",
     "v01",
     "i01-01",
-    24,
+    25,
     35,
     "2026-08-01",
     {
@@ -426,13 +430,15 @@ export const editors: Editor[] = [
     email: "prabhatkasra.bed@spec.edu.in",
     profileUrl:
       "https://www.spec.edu.in/specbed/Staff-Profile.aspx?cid=6&sid=336",
-    photoUrl: null,
+    photoUrl: "/editorial-board/prabhat-m-kasra.jpg",
     // Moved from Chief Editor to Editor per client instruction. Kept at
     // displayOrder 2 so he sits at the top of the Editors grid — the senior
     // editor immediately below the new Chief.
     role: "associate_editor",
     boardGroup: "editor",
     boardRole: "Editor",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -457,7 +463,9 @@ export const editors: Editor[] = [
     bio: "Dr. Neha J. Nandaniya is an academician and researcher specialising in educational psychology, language education, and educational technology, serving as Assistant Professor at M.B. Patel College of Education, Sardar Patel University. With teaching experience across primary, secondary, and higher education, she has published 15 research papers in UGC CARE-listed and peer-reviewed journals and authored five books. As a research supervisor at Sardar Patel University, she continues to mentor scholars and advance teacher education and innovative pedagogy.",
     email: "nehanandaniya@spuvvn.edu",
     profileUrl: "https://www.spuvvn.edu/team/dr-neha-j-nandaniya/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/neha-j-nandaniya.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -488,7 +496,9 @@ export const editors: Editor[] = [
     bio: "Dr. Dilipbhai J. Vasava is a teacher educator, researcher, and author specialising in Education and Hindi Literature, serving as Assistant Professor at M.B. Patel College of Education, Sardar Patel University, with over 12 years of teaching experience. He has authored 13 books, translated two, and published more than 50 research papers in peer-reviewed and UGC CARE-listed journals, and has guided eight M.Ed. dissertations. A member of several academic bodies including the Sardar Patel University Board of Studies, he has participated in over 100 national and international conferences and workshops as a presenter and keynote speaker.",
     email: null,
     profileUrl: "https://www.spuvvn.edu/team/mr-dilipbhai-j-vasava/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/dilipbhai-j-vasava.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 3,
   },
   {
@@ -519,7 +529,9 @@ export const editors: Editor[] = [
     // TODO(client): confirm this is the preferred public email
     email: "ajit970@yahoo.com",
     profileUrl: "https://www.vjbped.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/ajitsinh-r-gohil.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 4,
   },
   {
@@ -542,7 +554,9 @@ export const editors: Editor[] = [
     bio: "Dr. Hamis Juma is an education researcher and learning specialist from Tanzania, serving as Head of Research and Innovation at TUSOME. He holds a Doctorate in Education from Gujarat University, and his work focuses on leveraging technology and innovative methodologies to advance education. He has contributed to global organisations including UNESCO, Open Education Global, and 1 Million Teachers, and has published widely on AI-assisted learning, competence-based assessment, and educational transformation.",
     email: "hamis@tusome.ac.tz",
     profileUrl: "https://tz.linkedin.com/in/hamisjuma",
-    photoUrl: null,
+    photoUrl: "/editorial-board/hamis-juma.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 5,
   },
   {
@@ -575,19 +589,19 @@ export const editors: Editor[] = [
     email: "edgar.nderego@out.ac.tz",
     profileUrl: null,
     photoUrl: "/editorial-board/edgar-fidel-nderego.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 6,
   },
   {
     id: "bm-07",
     slug: "maheshkumar-parmar-sparsh",
     fullName: "Dr. Maheshkumar Parmar 'Sparsh'",
-    role: "review_board",
-    boardGroup: "associate",
-    boardRole: "Associate Editor & Reviewer",
+    role: "associate_editor",
+    boardGroup: "editor",
+    boardRole: "Editor",
     designation: "Principal (I/C) & Assistant Professor of Gujarati",
-    // TODO(client): source files list two locations (Godhra and Govt. Arts
-    // College, Vav) — confirm current posting.
-    affiliation: "Government Arts and Science College, Godhra, Gujarat",
+    affiliation: "Government Arts and Science College, Godhar, Gujarat",
     country: "India",
     qualifications: [],
     specializations: [
@@ -595,7 +609,7 @@ export const editors: Editor[] = [
       "Education",
       "Curriculum Development",
     ],
-    bio: "Dr. Maheshkumar Parmar 'Sparsh' is an educator, researcher, author, and academic leader, currently serving as Principal (I/C) and Assistant Professor of Gujarati at Government Arts and Science College, Godhra. A prolific writer, he has authored over 25 books, with literary works incorporated into school textbooks in Gujarat and Maharashtra, and has served on textbook writing committees and the State Resource Group. He also actively promotes environmental awareness, community service, and educational innovation.",
+    bio: "Dr. Maheshkumar Parmar 'Sparsh' is an educator, researcher, author, and academic leader, currently serving as Principal (I/C) and Assistant Professor of Gujarati at Government Arts and Science College, Godhar. A prolific writer, he has authored over 25 books, with literary works incorporated into school textbooks in Gujarat and Maharashtra, and has served on textbook writing committees and the State Resource Group. He also actively promotes environmental awareness, community service, and educational innovation.",
     honours: [
       "State Best Teacher Award",
       "NCERT National Award",
@@ -606,7 +620,9 @@ export const editors: Editor[] = [
     ],
     email: "pro.maheshsparsh@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/maheshkumar-parmar-sparsh.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 7,
   },
   {
@@ -631,7 +647,9 @@ export const editors: Editor[] = [
     bio: "Dr. Mohsin S. Garana is an academician specialising in Indian Psychology, Clinical Psychology, and Social Psychology, serving as Assistant Professor at Shree J.L.K. Kotecha Arts College, Shree Govind Guru University, Godhra. With over five years of teaching experience, he has contributed to the field through research, mentorship, and academic discourse, focusing on the application of psychological principles in diverse cultural and clinical settings.",
     email: "mohsingarana@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mohsin-garana.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 8,
   },
   {
@@ -659,25 +677,28 @@ export const editors: Editor[] = [
     // TODO(client): source link pointed to a shared department page also used
     // for another member — confirm correct profile URL.
     profileUrl: "https://ijpmed.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/nilesh-n-gohil.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 9,
   },
   {
     id: "bm-10",
     slug: "parth-s-kapadia",
-    fullName: "Mr. Parth S. Kapadia",
+    fullName: "Mr. Parth Sureshkumar Kapadia",
     role: "deputy_chief_editor",
     boardGroup: "deputy-chief",
     boardRole: "Deputy Chief Editor",
     designation: "Assistant Professor of Political Science",
-    affiliation: "Maharshi Dayanand Arts and Commerce College, Gujarat",
+    affiliation:
+      "Maharshi Dayananda Arts and Commerce College, Baspa, Gujarat",
     country: "India",
     qualifications: [
       "B.E. (Mechanical Engineering)",
       "M.A. (Political Science with Gandhian Studies), IGNOU",
       "GSET",
       "UGC-NET",
-      "Ph.D. (Political Science) — pursuing",
+      "Ph.D. (Political Science) — pursuing, Hemchandracharya North Gujarat University",
     ],
     specializations: [
       "Indian Politics",
@@ -685,11 +706,30 @@ export const editors: Editor[] = [
       "Rural Development",
       "Panchayati Raj",
       "Electoral Studies",
+      "Dr. B.R. Ambedkar's Political Thought",
     ],
-    bio: "Mr. Parth S. Kapadia is a young academic and Political Science educator with interdisciplinary qualifications, serving as Assistant Professor of Political Science at Maharshi Dayanand Arts and Commerce College. He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. His research focuses on Indian politics, democracy, youth participation, Panchayati Raj, and electoral studies, and he has served as an expert with the Chief Electoral Office, Gujarat.",
+    bio: "Mr. Parth Sureshkumar Kapadia is a young academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa (from January 2026). He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India' (April 2026). He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with seven+ publications in academic journals.",
+    positions: [
+      "Assistant Professor of Political Science — Maharshi Dayananda Arts and Commerce College, Baspa (2026–present)",
+      "Expert Lecturer (NET/SLET/JRF), Department of Political Science, Gujarat University (January 2026)",
+      "Joint Coordinator, Department of Political Science, Gujarat University",
+      "Thematic Expert — IICDEM (International IDEA / IIIDEM / Election Commission of India), Bharat Mandapam, New Delhi",
+      "Thematic Expert — IIIDEM, 'AI and Election: Innovation, Integrity and Institutional Preparedness'",
+    ],
+    publications: [
+      "'A Young India's Village: Challenges and Opportunities in Indian Politics', Research and Innovations in Multidisciplinary Subjects (ISBN 978-93-92926-45-7), 2025",
+      "'The Indian Villages: Cornerstone of Viksit Bharat 2047', Atmaj Academic Research Journal (ISSN 2348-9456), 2025",
+      "'Youth in Indian Politics: Visionary Leaders for the Next Generation', Soham Journal (ISSN 2350-0697), 2024",
+      "'Indian Youth and Educational System', Sanshodhanani Pa Pa Pagali (ISBN 978-93-5879-919-4), 2024",
+      "'Role of Youth in Politics: A Comparative Analysis of Urban and Rural India', SETU (ISSN 3108-3013), 2026",
+      "'The Rise of Women in Panchayats: Challenges and Opportunities', Soham Journal (ISSN 2350-0697), 2025",
+      "'The Role of Youth in Strengthening Bharat: A Social and Political Perspective', Samvid Multidisciplinary Research Journal (ISSN 2582-015X), 2025",
+    ],
     email: null,
     profileUrl: "https://in.linkedin.com/in/parth-kapadia-845800171",
-    photoUrl: null,
+    photoUrl: "/editorial-board/parth-s-kapadia.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 2,
   },
   {
@@ -719,18 +759,18 @@ export const editors: Editor[] = [
     // TODO(client): same shared link as another member — confirm correct
     // profile URL.
     profileUrl: "https://ijpmed.ac.in/",
-    photoUrl: null,
+    photoUrl: "/editorial-board/sanjaykumar-r-thakor.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 11,
   },
   {
     id: "bm-12",
     slug: "mithun-u-khandwala",
     fullName: "Dr. Mithun U. Khandwala",
-    // TODO(client): confirm this member's exact role/group — the source file
-    // did not specify a role for this journal.
-    role: "associate_editor",
-    boardGroup: "editor",
-    boardRole: "Editorial Board Member",
+    role: "review_board",
+    boardGroup: "associate",
+    boardRole: "Associate Editor & Reviewer",
     designation:
       "Founder, Knowlistic World Learning Foundation; ELT Educator & Teacher Trainer",
     affiliation: "Knowlistic World Learning Foundation",
@@ -767,7 +807,9 @@ export const editors: Editor[] = [
     ],
     email: "mithun.khandwala@cept.ac.in",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mithun-u-khandwala.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 12,
   },
   {
@@ -801,6 +843,8 @@ export const editors: Editor[] = [
     email: "mahesh17585@gmail.com",
     profileUrl: null,
     photoUrl: null,
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 13,
   },
   {
@@ -820,6 +864,8 @@ export const editors: Editor[] = [
     profileUrl: null,
     // TODO(client): add photo -> public/editorial-board/anand-pandya.jpg
     photoUrl: null,
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 14,
   },
   {
@@ -860,10 +906,6 @@ export const editors: Editor[] = [
   },
   // Chief Editor slot — displayOrder 1 keeps this entry at the top of the
   // "Chief Editor" featured section irrespective of insertion order.
-  // TODO(client): supply full profile for Gopal Bharvad — designation,
-  // affiliation, qualifications, specialisations, bio, institutional email,
-  // profile URL and photo. The fields below are minimal placeholders so the
-  // Chief Editor slot renders while awaiting the complete information.
   {
     id: "bm-16",
     slug: "gopal-bharvad",
@@ -871,15 +913,32 @@ export const editors: Editor[] = [
     role: "editor_in_chief",
     boardGroup: "chief",
     boardRole: "Chief Editor",
-    designation: "Chief Editor, Viśvasaṃvid",
-    affiliation: "Affiliation to be confirmed",
+    designation:
+      "Assistant Professor, M.B. Patel College of Education",
+    affiliation:
+      "M.B. Patel College of Education, Sardar Patel University, Vallabh Vidyanagar, Anand, Gujarat",
     country: "India",
-    qualifications: [],
-    specializations: [],
-    bio: "Dr. Gopal Bharvad serves as the Chief Editor of Viśvasaṃvid, leading the journal's editorial policy and final decisions on manuscripts. A detailed academic profile — qualifications, research interests, publications, and institutional affiliation — will be published here shortly.",
-    email: null,
-    profileUrl: null,
-    photoUrl: null,
+    qualifications: ["Ph.D. (Education), Sardar Patel University"],
+    specializations: [
+      "Education & Educational Research",
+      "Teacher Training",
+      "Pedagogy of Social Science",
+      "Assessment & Evaluation",
+      "Educational Psychology",
+      "Curriculum Development",
+      "Guidance & Counselling",
+      "Higher Education",
+      "National Education Policy (NEP) 2020",
+    ],
+    bio: "Dr. Gopal Bharvad is a dedicated academician and researcher with expertise in Education, Political Science, Teacher Education and Educational Psychology, and serves as Chief Editor of Viśvasaṃvid. He is Assistant Professor at M.B. Patel College of Education, Sardar Patel University, Vallabh Vidyanagar, where he contributes to teacher training, curriculum development and educational research. He holds a Ph.D. in Education from Sardar Patel University and has made significant scholarly contributions through 31+ research publications, books and conference presentations. His work explores assessment and evaluation, teaching–learning methodologies, social sciences education and contemporary educational policies, with a strong focus on the National Education Policy (NEP) 2020, guidance and counselling, and student development. He has authored several books, including 'Divine Aptitude', 'Mental Soundness & Sickness', and 'Self Personality and Betterment of Adolescents in Respect to Family Size'; his research papers have appeared in leading national and international journals, contributing valuable insights into educational psychology, student success, and innovative teaching strategies.",
+    email: "gopalbharvad@spuvvn.edu",
+    profileUrl:
+      "https://www.spuvvn.edu/team/dr-gopalbhai-bathabhai-bharvad/",
+    // TODO(client): supply a higher-resolution portrait — the current
+    // 225×300 crop was extracted from the profile PDF and is small.
+    photoUrl: "/editorial-board/gopal-bharvad.jpg",
+    // TODO(client): supply ORCID iD (ISSN India compulsory).
+    orcid: null,
     displayOrder: 1,
   },
 ];

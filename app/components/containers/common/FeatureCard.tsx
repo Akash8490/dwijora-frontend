@@ -10,7 +10,7 @@ export function FeatureCard({
 }: {
   icon: ReactNode;
   title: ReactNode;
-  description: ReactNode;
+  description?: ReactNode;
   className?: string;
 }) {
   return (
@@ -26,7 +26,9 @@ export function FeatureCard({
       <h3 className="font-display text-lg text-brand-ink leading-snug">
         {title}
       </h3>
-      <p className="text-sm text-brand-muted leading-relaxed">{description}</p>
+      {description ? (
+        <p className="text-sm text-brand-muted leading-relaxed">{description}</p>
+      ) : null}
     </Card>
   );
 }

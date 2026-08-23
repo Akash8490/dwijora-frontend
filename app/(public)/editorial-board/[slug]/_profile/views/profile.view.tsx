@@ -185,6 +185,23 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
                 <dd className="col-span-2 text-brand-ink">{member.boardRole}</dd>
                 <dt className="text-brand-muted">Country</dt>
                 <dd className="col-span-2 text-brand-ink">{member.country}</dd>
+                <dt className="text-brand-muted">ORCID iD</dt>
+                <dd className="col-span-2 text-brand-ink break-all">
+                  {member.orcid ? (
+                    <a
+                      href={`https://orcid.org/${member.orcid}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+                    >
+                      {member.orcid}
+                    </a>
+                  ) : (
+                    <span className="italic text-brand-muted">
+                      Awaiting confirmation
+                    </span>
+                  )}
+                </dd>
               </dl>
               <Button asChild variant="ghost" className="mt-4 -ml-2">
                 <Link href="/editorial-board">← Back to full board</Link>

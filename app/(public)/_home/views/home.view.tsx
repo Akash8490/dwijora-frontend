@@ -168,17 +168,30 @@ export function HomeView({ data }: HomeViewProps) {
       </section>
 
       {/* INDEXING / STATS STRIP */}
+      {/* Wording is deliberately factual: "Indexing applications in progress"
+          — not "Indexed with". We are not yet listed in any of the target
+          databases; false indexing claims are a predatory-journal red flag
+          and grounds for delisting once we are accepted. Each badge will
+          become a link to the official database record as confirmations
+          arrive; until then they read as targets. */}
       <section className="border-y border-brand bg-brand-surface-2/60 py-6">
         <Container size="xl">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand-muted">
-              Indexed with
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {indexing.map((i) => (
-                <IndexingBadge key={i} name={i} />
-              ))}
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                Indexing applications in progress
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {indexing.map((i) => (
+                  <IndexingBadge key={i} name={i} />
+                ))}
+              </div>
             </div>
+            <p className="text-xs text-brand-muted">
+              Listings will move to a confirmed section as each service
+              completes its evaluation. Papers become discoverable through
+              Google Scholar automatically after publication.
+            </p>
           </div>
         </Container>
       </section>
@@ -190,7 +203,7 @@ export function HomeView({ data }: HomeViewProps) {
             <StatCard label="Published papers" value={formatCount(totals.papers)} icon={<FileCheck2 className="h-4 w-4" />} />
             <StatCard label="Issues released" value={formatCount(totals.issues)} icon={<BookOpen className="h-4 w-4" />} />
             <StatCard label="Volumes" value={formatCount(totals.volumes)} icon={<Award className="h-4 w-4" />} />
-            <StatCard label="Contributing authors" value={`${formatCount(totals.authors)}+`} icon={<UserCheck className="h-4 w-4" />} />
+            <StatCard label="Contributing authors" value={formatCount(totals.authors)} icon={<UserCheck className="h-4 w-4" />} />
           </div>
         </MotionInView>
       </Section>
@@ -236,7 +249,7 @@ export function HomeView({ data }: HomeViewProps) {
             <FeatureCard
               icon={<Globe2 className="h-5 w-5" />}
               title="Trilingual publication"
-              description="Publishing in English, Hindi, and Gujarati — encouraging inclusive academic participation and cross-cultural exchange."
+              description="A multilingual publication — encouraging inclusive academic participation and cross-cultural exchange."
             />
             <FeatureCard
               icon={<Award className="h-5 w-5" />}
@@ -286,7 +299,7 @@ export function HomeView({ data }: HomeViewProps) {
           <FeatureCard
             icon={<Globe2 className="h-5 w-5" />}
             title="Global readership"
-            description="Discoverable through Google Scholar and growing academic indexes."
+            description="Papers are indexed by Google Scholar after publication; further discoverability grows as indexing applications complete."
           />
           <FeatureCard
             icon={<Award className="h-5 w-5" />}
@@ -296,7 +309,7 @@ export function HomeView({ data }: HomeViewProps) {
           <FeatureCard
             icon={<FileCheck2 className="h-5 w-5" />}
             title="Editorial care"
-            description="Careful copy-editing, DOI assignment (planned), and long-term hosting."
+            description="Careful copy-editing, planned DOI registration, and long-term hosting."
           />
         </div>
       </Section>
