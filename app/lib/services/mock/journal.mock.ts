@@ -842,7 +842,7 @@ export const editors: Editor[] = [
     // (prefer an institutional address if available).
     email: "mahesh17585@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mahesh-b-bharvad.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
     orcid: null,
     displayOrder: 13,
@@ -862,8 +862,7 @@ export const editors: Editor[] = [
     country: "India",
     email: "anandpandya91@gmail.com",
     profileUrl: null,
-    // TODO(client): add photo -> public/editorial-board/anand-pandya.jpg
-    photoUrl: null,
+    photoUrl: "/editorial-board/anand-pandya.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
     orcid: null,
     displayOrder: 14,
@@ -899,8 +898,7 @@ export const editors: Editor[] = [
     // display; an institutional address (e.g. @spuvvn.edu) is preferred.
     email: "bagadhvi@gmail.com",
     profileUrl: null,
-    // TODO(client): add photo -> public/editorial-board/bhavin-gadhvi.jpg
-    photoUrl: null,
+    photoUrl: "/editorial-board/bhavin-gadhvi.jpg",
     orcid: "0009-0004-9786-3474",
     displayOrder: 15,
   },
@@ -937,8 +935,11 @@ export const editors: Editor[] = [
     // TODO(client): supply a higher-resolution portrait — the current
     // 225×300 crop was extracted from the profile PDF and is small.
     photoUrl: "/editorial-board/gopal-bharvad.jpg",
-    // TODO(client): supply ORCID iD (ISSN India compulsory).
-    orcid: null,
+    orcid: "0000-0001-6909-6598",
+    scopusId: "99312022",
+    researcherId: "GQO-9931-2022",
+    googleScholarId: "ojKkvUgAAAAJ",
+    vidwanId: "265624",
     displayOrder: 1,
   },
 ];

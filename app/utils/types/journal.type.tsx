@@ -123,6 +123,13 @@ export interface Editor {
    *  every listed board member. `null` means we do not yet have the iD from
    *  the member and it must be collected before publication. */
   orcid: string | null;
+  /** Optional academic-identity IDs surfaced in the profile-page sidebar as
+   *  clickable links to the respective platforms. Each is optional so
+   *  editors who don't have one simply don't get the row. */
+  scopusId?: string;
+  researcherId?: string;
+  googleScholarId?: string;
+  vidwanId?: string;
   /** Rank within the board (lower = earlier). */
   displayOrder: number;
 }
