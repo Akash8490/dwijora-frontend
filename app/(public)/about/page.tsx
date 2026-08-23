@@ -80,49 +80,49 @@ async function AboutContent() {
       <Section size="lg">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
-          <Prose>
-            <h2>About the journal</h2>
-            <p>
-              <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
-              is an international, peer-reviewed, multidisciplinary journal
-              dedicated to promoting scholarly excellence and dialogue
-              across diverse fields of knowledge. The
-              journal provides a dynamic platform for researchers,
-              academicians, educators, professionals, and students to share
-              innovative ideas, original research, and critical perspectives.
-              Embracing linguistic diversity,{" "}
-              <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}publishes scholarly contributions in multiple languages,
-              encouraging inclusive academic participation and
-              cross-cultural knowledge exchange. The journal welcomes research
-              articles, review papers, case studies, book reviews, and
-              interdisciplinary studies that address contemporary challenges
-              and advance human understanding. Guided by the timeless Vedic
-              principle,{" "}
-              <Sanskrit as="em">
-                {`“${BRAND.shlokaDeva}”`}
-              </Sanskrit>
-              {" "}({`“${BRAND.shlokaTranslation.replace(/\.$/, "")}”`}),{" "}
-              <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}aspires to bridge cultures, disciplines, and languages
-              while fostering ethical scholarship, intellectual collaboration,
-              innovation, and the universal pursuit of knowledge for the
-              betterment of society.
-            </p>
-          </Prose>
+            <Prose>
+              <h2>About the journal</h2>
+              <p>
+                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
+                {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
+                is an international, peer-reviewed, multidisciplinary journal
+                dedicated to promoting scholarly excellence and dialogue
+                across diverse fields of knowledge. The
+                journal provides a dynamic platform for researchers,
+                academicians, educators, professionals, and students to share
+                innovative ideas, original research, and critical perspectives.
+                Embracing linguistic diversity,{" "}
+                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
+                {" "}publishes scholarly contributions in multiple languages,
+                encouraging inclusive academic participation and
+                cross-cultural knowledge exchange. The journal welcomes research
+                articles, review papers, case studies, book reviews, and
+                interdisciplinary studies that address contemporary challenges
+                and advance human understanding. Guided by the timeless Vedic
+                principle,{" "}
+                <Sanskrit as="em">
+                  {`“${BRAND.shlokaDeva}”`}
+                </Sanskrit>
+                {" "}({`“${BRAND.shlokaTranslation.replace(/\.$/, "")}”`}),{" "}
+                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
+                {" "}aspires to bridge cultures, disciplines, and languages
+                while fostering ethical scholarship, intellectual collaboration,
+                innovation, and the universal pursuit of knowledge for the
+                betterment of society.
+              </p>
+            </Prose>
 
-          {/* CTA row lives OUTSIDE <Prose> — inside, the .prose-brand a rule
+            {/* CTA row lives OUTSIDE <Prose> — inside, the .prose-brand a rule
               paints links in --brand-primary, which would render the primary
               Button's text invisible against its --brand-primary background. */}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href={ROUTES.EDITORIAL_BOARD}>Meet the editorial board</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href={ROUTES.AIM_AND_SCOPE}>Read our aim &amp; scope</Link>
-            </Button>
-          </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild>
+                <Link href={ROUTES.EDITORIAL_BOARD}>Meet the editorial board</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href={ROUTES.AIM_AND_SCOPE}>Read our aim &amp; scope</Link>
+              </Button>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -133,8 +133,8 @@ async function AboutContent() {
               label="ISSN / e-ISSN"
               value={
                 meta.issn || meta.eIssn
-                  ? `${meta.issn ?? "Applied for"} / ${meta.eIssn ?? "Applied for"}`
-                  : "Applied for"
+                  ? `${meta.issn ?? "N/A"} / ${meta.eIssn ?? "N/A"}`
+                  : "N/A"
               }
               hint="Assigned identifiers will appear here once ISSN India completes the registration."
               icon={<FileCheck2 className="h-4 w-4" />}

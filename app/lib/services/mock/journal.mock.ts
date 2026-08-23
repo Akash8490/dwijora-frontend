@@ -18,7 +18,7 @@ export const journalMeta: JournalMeta = {
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
   // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
-  // Until then keep as `null` — the site renders "Applied for" wherever
+  // Until then keep as `null` — the site renders "N/A" wherever
   // these fields display. NEVER put a 0000-shaped placeholder here: ISSN
   // India treats fake-looking identifiers as a predatory-journal red flag,
   // and a fabricated `citation_issn` on paper pages would poison Google
@@ -28,7 +28,7 @@ export const journalMeta: JournalMeta = {
   eIssn: null,
   publisher: "Mr. Siddhant Boriya",
   publisherAddress:
-    "B/23, Maruti Nandan Vill-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
+    "B/23, Maruti Nandan Villa-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
   publisherEmail: "siddhantboriya7818@gmail.com",
   editorInChief: "Dr. Gopal Bharvad",
   contactEmail: "visvasamvidimrj@gmail.com",
