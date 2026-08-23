@@ -123,6 +123,13 @@ export interface Editor {
    *  every listed board member. `null` means we do not yet have the iD from
    *  the member and it must be collected before publication. */
   orcid: string | null;
+  /** Optional academic-identity IDs surfaced in the profile-page sidebar as
+   *  clickable links to the respective platforms. Each is optional so
+   *  editors who don't have one simply don't get the row. */
+  scopusId?: string;
+  researcherId?: string;
+  googleScholarId?: string;
+  vidwanId?: string;
   /** Rank within the board (lower = earlier). */
   displayOrder: number;
 }
@@ -160,10 +167,10 @@ export interface JournalMeta {
   shlokaTranslation: string;
   tagline: string;
   /** Print ISSN once assigned by CSIR-NIScPR. `null` until then — the site
-   *  renders "Applied for" wherever this is displayed rather than showing a
+   *  renders "N/A" wherever this is displayed rather than showing a
    *  fake 0000-shaped placeholder (an ISSN India predatory-journal red flag). */
   issn: string | null;
-  /** Online e-ISSN once assigned. Same null-means-"Applied for" contract as
+  /** Online e-ISSN once assigned. Same null-means-"N/A" contract as
    *  `issn`. Google Scholar's `citation_issn` meta tag is only emitted when
    *  non-null — a fabricated ISSN there would poison Scholar's index. */
   eIssn: string | null;

@@ -34,13 +34,13 @@ export function JournalParticularsTable({
     {
       label: "ISSN (Print)",
       value: meta.issn ?? (
-        <span className="italic text-brand-muted">Applied for</span>
+        <span className="italic text-brand-muted">N/A</span>
       ),
     },
     {
       label: "ISSN (Online)",
       value: meta.eIssn ?? (
-        <span className="italic text-brand-muted">Applied for</span>
+        <span className="italic text-brand-muted">N/A</span>
       ),
     },
     { label: "Publisher name", value: meta.publisher },

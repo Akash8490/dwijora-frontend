@@ -179,7 +179,7 @@ export default async function PaperDetailPage({ params }: Params) {
               </span>
             </div>
             <div className="text-brand-muted text-xs uppercase tracking-wider">
-              ISSN (Online) {meta.eIssn ?? "Applied for"}
+              ISSN (Online) {meta.eIssn ?? "N/A"}
               {paper.doi ? (
                 <>
                   <span className="mx-2" aria-hidden>·</span>
@@ -288,7 +288,19 @@ export default async function PaperDetailPage({ params }: Params) {
             <StatCard label="Downloads" value={paper.downloadCount ?? 0} icon={<FileText className="h-4 w-4" />} />
             <StatCard label="Citations" value={paper.citationCount ?? 0} icon={<Users className="h-4 w-4" />} />
             <Callout tone="info" title="Open access">
-              This article is freely available. Authors retain copyright and grant a Creative Commons Attribution licence.
+              © {new Date(paper.publishedAt).getFullYear()} The
+              Author(s). Published by Vi&#347;vasa&#7747;vid. This article
+              is licensed under the{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-brand-accent-deep"
+              >
+                Creative Commons Attribution 4.0 International License
+                (CC&nbsp;BY&nbsp;4.0)
+              </a>
+              . Authors retain copyright.
             </Callout>
           </aside>
         </div>

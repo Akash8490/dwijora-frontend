@@ -18,7 +18,7 @@ export const journalMeta: JournalMeta = {
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
   // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
-  // Until then keep as `null` — the site renders "Applied for" wherever
+  // Until then keep as `null` — the site renders "N/A" wherever
   // these fields display. NEVER put a 0000-shaped placeholder here: ISSN
   // India treats fake-looking identifiers as a predatory-journal red flag,
   // and a fabricated `citation_issn` on paper pages would poison Google
@@ -28,7 +28,7 @@ export const journalMeta: JournalMeta = {
   eIssn: null,
   publisher: "Mr. Siddhant Boriya",
   publisherAddress:
-    "B/23, Maruti Nandan Vill-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
+    "B/23, Maruti Nandan Villa-1, near Sarkari Tubewell, Bopal, Ahmedabad, Gujarat 380058, India",
   publisherEmail: "siddhantboriya7818@gmail.com",
   editorInChief: "Dr. Gopal Bharvad",
   contactEmail: "visvasamvidimrj@gmail.com",
@@ -39,7 +39,7 @@ export const journalMeta: JournalMeta = {
     "Education, humanities, social sciences, sciences, technology, management and interdisciplinary research.",
   startingYear: 2026,
   publicationFormat: "Online",
-  subject: "Multidisciplinary — Education and Research",
+  subject: "Multidisciplinary — All Fields of Knowledge",
   languages: ["Multi Language"],
 };
 
@@ -698,7 +698,6 @@ export const editors: Editor[] = [
       "M.A. (Political Science with Gandhian Studies), IGNOU",
       "GSET",
       "UGC-NET",
-      "Ph.D. (Political Science) — pursuing, Hemchandracharya North Gujarat University",
     ],
     specializations: [
       "Indian Politics",
@@ -708,7 +707,7 @@ export const editors: Editor[] = [
       "Electoral Studies",
       "Dr. B.R. Ambedkar's Political Thought",
     ],
-    bio: "Mr. Parth Sureshkumar Kapadia is a young academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa (from January 2026). He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU), has qualified GSET and UGC-NET, and is pursuing a Ph.D. in Political Science at Hemchandracharya North Gujarat University. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India' (April 2026). He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with seven+ publications in academic journals.",
+    bio: "Mr. Parth Sureshkumar Kapadia is an academic and Political Science educator serving as Assistant Professor of Political Science at Maharshi Dayananda Arts and Commerce College, Baspa. He holds a B.E. in Mechanical Engineering and a Master's in Political Science with Gandhian Studies (IGNOU) and has qualified GSET and UGC-NET. He has served as Expert Lecturer at Gujarat University's Department of Political Science, delivering a six-day expert lecture series on NET/SLET and JRF preparation, and as Joint Coordinator organising the national webinar on 'Relevance of Dr. B.R. Ambedkar's Thought in Contemporary India'. He has additionally served as a Thematic Expert at the India International Conference on Democracy and Election Management (IICDEM) at Bharat Mandapam, New Delhi, organised jointly by International IDEA, IIIDEM and the Election Commission of India, and at IIIDEM's programme on 'AI and Election: Innovation, Integrity and Institutional Preparedness'. His research covers Indian politics, democracy, youth participation, Panchayati Raj, electoral studies, and Dr. B.R. Ambedkar's political thought, with several publications in academic journals.",
     positions: [
       "Assistant Professor of Political Science — Maharshi Dayananda Arts and Commerce College, Baspa (2026–present)",
       "Expert Lecturer (NET/SLET/JRF), Department of Political Science, Gujarat University (January 2026)",
@@ -842,7 +841,7 @@ export const editors: Editor[] = [
     // (prefer an institutional address if available).
     email: "mahesh17585@gmail.com",
     profileUrl: null,
-    photoUrl: null,
+    photoUrl: "/editorial-board/mahesh-b-bharvad.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
     orcid: null,
     displayOrder: 13,
@@ -862,8 +861,7 @@ export const editors: Editor[] = [
     country: "India",
     email: "anandpandya91@gmail.com",
     profileUrl: null,
-    // TODO(client): add photo -> public/editorial-board/anand-pandya.jpg
-    photoUrl: null,
+    photoUrl: "/editorial-board/anand-pandya.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
     orcid: null,
     displayOrder: 14,
@@ -899,8 +897,7 @@ export const editors: Editor[] = [
     // display; an institutional address (e.g. @spuvvn.edu) is preferred.
     email: "bagadhvi@gmail.com",
     profileUrl: null,
-    // TODO(client): add photo -> public/editorial-board/bhavin-gadhvi.jpg
-    photoUrl: null,
+    photoUrl: "/editorial-board/bhavin-gadhvi.jpg",
     orcid: "0009-0004-9786-3474",
     displayOrder: 15,
   },
@@ -937,8 +934,11 @@ export const editors: Editor[] = [
     // TODO(client): supply a higher-resolution portrait — the current
     // 225×300 crop was extracted from the profile PDF and is small.
     photoUrl: "/editorial-board/gopal-bharvad.jpg",
-    // TODO(client): supply ORCID iD (ISSN India compulsory).
-    orcid: null,
+    orcid: "0000-0001-6909-6598",
+    scopusId: "99312022",
+    researcherId: "GQO-9931-2022",
+    googleScholarId: "ojKkvUgAAAAJ",
+    vidwanId: "265624",
     displayOrder: 1,
   },
 ];
@@ -964,11 +964,45 @@ export const journalPages: JournalPage[] = [
   { id: "pg8", slug: "terms", title: "Terms & Conditions", updatedAt: "2026-06-01", status: "published" },
 ];
 
-export const indexingPartners = [
-  "Google Scholar",
-  "ROAD",
-  "CrossRef (planned)",
-  "DOAJ (in review)",
-  "Scilit",
-  "BASE",
+/**
+ * Indexing partners with per-service status labels per the ISSN India audit
+ * (§8 — status table). Each service's status is a truthful, verifiable
+ * statement so ISSN reviewers cannot flag the site for misleading claims.
+ *
+ * `label` renders inside the pill (short name). `status` renders below it
+ * (long-form truthful status). Change a `status` to "Confirmed listed"
+ * (and add a `href` to the official record) as evidence lands.
+ */
+export interface IndexingPartner {
+  label: string;
+  status: string;
+  href?: string;
+}
+
+export const indexingPartners: IndexingPartner[] = [
+  {
+    label: "Google Scholar",
+    status:
+      "Discoverability subject to Google Scholar’s independent crawling and indexing processes",
+  },
+  {
+    label: "ROAD",
+    status: "Application planned",
+  },
+  {
+    label: "Scilit",
+    status: "Application planned",
+  },
+  {
+    label: "BASE",
+    status: "Application planned",
+  },
+  {
+    label: "Crossref",
+    status: "Planned — membership / registration not yet active",
+  },
+  {
+    label: "DOAJ",
+    status: "Application planned once eligibility criteria are met",
+  },
 ];

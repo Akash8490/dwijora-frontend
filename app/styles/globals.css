@@ -238,7 +238,26 @@
     line-height: 1.75;
     max-width: 68ch;
   }
-  .prose-brand p { margin-block: 0.85rem; }
+  /* Justified alignment across the whole site's long-form prose so both
+     the left and right edges of the paragraph read as a clean vertical
+     line. `text-align-last: left` keeps the final line naturally
+     left-aligned instead of stretching a short trailing line across the
+     column. `hyphens: auto` lets browsers hyphenate long words so
+     justification doesn't create big "rivers" of whitespace in the
+     narrower (68ch) prose column. */
+  .prose-brand p {
+    margin-block: 0.85rem;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+  }
+  /* Sanskrit/Hindi/Gujarati text sits inside <Sanskrit> and <span lang="…">;
+     Indic scripts do not hyphenate the same way Latin does, so switch those
+     runs back to left-aligned to avoid awkward spacing. */
+  .prose-brand :where([lang="sa"], [lang="hi"], [lang="gu"]) {
+    text-align: left;
+    hyphens: none;
+  }
   .prose-brand h2 {
     font-family: var(--font-display), Georgia, serif;
     font-size: 1.5rem;

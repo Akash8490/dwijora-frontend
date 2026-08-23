@@ -181,16 +181,22 @@ export function HomeView({ data }: HomeViewProps) {
               <span className="text-xs font-semibold uppercase tracking-wider text-brand-muted">
                 Indexing applications in progress
               </span>
-              <div className="flex flex-wrap gap-2">
-                {indexing.map((i) => (
-                  <IndexingBadge key={i} name={i} />
+              <div className="flex flex-wrap items-start gap-2">
+                {indexing?.map((i) => (
+                  <IndexingBadge
+                    key={i?.label}
+                    name={i?.label}
+                    status={i?.status}
+                    href={i?.href}
+                  />
                 ))}
               </div>
             </div>
             <p className="text-xs text-brand-muted">
               Listings will move to a confirmed section as each service
-              completes its evaluation. Papers become discoverable through
-              Google Scholar automatically after publication.
+              completes its evaluation. Published articles may become
+              discoverable in Google Scholar subject to Google
+              Scholar&rsquo;s independent crawling and indexing processes.
             </p>
           </div>
         </Container>
@@ -223,8 +229,8 @@ export function HomeView({ data }: HomeViewProps) {
             <Sanskrit>{BRAND.nameDeva}</Sanskrit>
             {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
             is an international, peer-reviewed, multidisciplinary journal
-            dedicated to promoting excellence in education, research, and
-            scholarly dialogue across diverse fields of knowledge. The
+            dedicated to promoting scholarly excellence and dialogue across
+            diverse fields of knowledge. The
             journal provides a dynamic platform for researchers, academicians,
             educators, professionals, and students to share innovative ideas,
             original research, and critical perspectives.
@@ -299,7 +305,7 @@ export function HomeView({ data }: HomeViewProps) {
           <FeatureCard
             icon={<Globe2 className="h-5 w-5" />}
             title="Global readership"
-            description="Papers are indexed by Google Scholar after publication; further discoverability grows as indexing applications complete."
+            description="Published articles may become discoverable in Google Scholar subject to Google Scholar's independent crawling and indexing processes; further discoverability grows as indexing applications complete."
           />
           <FeatureCard
             icon={<Award className="h-5 w-5" />}

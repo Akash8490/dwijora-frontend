@@ -9,7 +9,7 @@ import { ROUTES } from "@/app/lib/routeEndPoints";
 import { journalMeta } from "@/app/lib/services/mock/journal.mock";
 
 function issnLabel(v: string | null): string {
-  return v && v.length > 0 ? v : "Applied for";
+  return v && v.length > 0 ? v : "N/A";
 }
 
 const QUICK_LINKS = [

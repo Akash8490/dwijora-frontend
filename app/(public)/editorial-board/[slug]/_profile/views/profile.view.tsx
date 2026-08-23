@@ -59,7 +59,7 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
 
             <section className="mt-10">
               <h3 className="font-display text-xl text-brand-ink">About</h3>
-              <p className="mt-3 text-brand-ink/85 leading-relaxed">
+              <p className="mt-3 text-brand-ink/85 leading-relaxed text-justify [text-align-last:left] hyphens-auto">
                 {member.bio}
               </p>
             </section>
@@ -198,7 +198,7 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
                     </a>
                   ) : (
                     <span className="italic text-brand-muted">
-                      Awaiting confirmation
+                      Not available
                     </span>
                   )}
                 </dd>
@@ -207,6 +207,83 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
                 <Link href="/editorial-board">← Back to full board</Link>
               </Button>
             </Card>
+
+            {(member.scopusId ||
+              member.researcherId ||
+              member.googleScholarId ||
+              member.vidwanId) && (
+              <Card className="border-brand bg-card-brand p-5 md:p-6 paper-shadow">
+                <h3 className="font-display text-lg text-brand-ink">
+                  Academic identity
+                </h3>
+                <p className="mt-1 text-xs text-brand-muted">
+                  Verified public profiles for citation and research
+                  discoverability.
+                </p>
+                <dl className="mt-3 grid grid-cols-3 gap-3 text-sm">
+                  {member.scopusId ? (
+                    <>
+                      <dt className="text-brand-muted">Scopus</dt>
+                      <dd className="col-span-2 text-brand-ink break-all">
+                        <a
+                          href={`https://www.scopus.com/authid/detail.uri?authorId=${member.scopusId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+                        >
+                          {member.scopusId}
+                        </a>
+                      </dd>
+                    </>
+                  ) : null}
+                  {member.researcherId ? (
+                    <>
+                      <dt className="text-brand-muted">Web of Science</dt>
+                      <dd className="col-span-2 text-brand-ink break-all">
+                        <a
+                          href={`https://www.webofscience.com/wos/author/record/${member.researcherId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+                        >
+                          {member.researcherId}
+                        </a>
+                      </dd>
+                    </>
+                  ) : null}
+                  {member.googleScholarId ? (
+                    <>
+                      <dt className="text-brand-muted">Google Scholar</dt>
+                      <dd className="col-span-2 text-brand-ink break-all">
+                        <a
+                          href={`https://scholar.google.com/citations?user=${member.googleScholarId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+                        >
+                          {member.googleScholarId}
+                        </a>
+                      </dd>
+                    </>
+                  ) : null}
+                  {member.vidwanId ? (
+                    <>
+                      <dt className="text-brand-muted">Vidwan</dt>
+                      <dd className="col-span-2 text-brand-ink break-all">
+                        <a
+                          href={`https://vidwan.inflibnet.ac.in/profile/${member.vidwanId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-primary hover:text-brand-accent-deep underline decoration-brand-accent/40 underline-offset-2"
+                        >
+                          {member.vidwanId}
+                        </a>
+                      </dd>
+                    </>
+                  ) : null}
+                </dl>
+              </Card>
+            )}
           </aside>
         </div>
       </Section>

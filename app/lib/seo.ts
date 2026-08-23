@@ -13,7 +13,7 @@ const APP_KEYWORDS = [
   BRAND.nameDeva,
   "international journal",
   "multidisciplinary journal",
-  "education research",
+  "multidisciplinary research",
   "peer-reviewed",
   "open access",
   "multilingual journal",

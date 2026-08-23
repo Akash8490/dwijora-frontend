@@ -22,6 +22,7 @@ import {
   papers,
   submissions,
   volumes,
+  type IndexingPartner,
 } from "@/app/lib/services/mock/journal.mock";
 
 /**
@@ -52,7 +53,9 @@ export async function getJournalMeta(): Promise<ApiEnvelope<JournalMeta>> {
   return delay(ok(journalMeta));
 }
 
-export async function getIndexingPartners(): Promise<ApiEnvelope<string[]>> {
+export async function getIndexingPartners(): Promise<
+  ApiEnvelope<IndexingPartner[]>
+> {
   // TODO(api): GET /journal/indexing
   return delay(ok(indexingPartners));
 }

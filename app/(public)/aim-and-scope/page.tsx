@@ -28,7 +28,7 @@ import { ROUTES } from "@/app/lib/routeEndPoints";
 export const metadata: Metadata = buildMetadata({
   title: "Aim & Scope",
   description:
-    "The disciplines, article types, and languages Viśvasaṃvid publishes — a peer-reviewed, multidisciplinary journal of education and research.",
+    "The disciplines, article types, and languages Viśvasaṃvid publishes — a peer-reviewed, multidisciplinary journal welcoming scholarly work across every field of knowledge.",
   path: "/aim-and-scope",
 });
 
@@ -61,7 +61,7 @@ async function ScopeContent() {
       <PageHero
         eyebrow="Aim & Scope"
         title="Disciplines, languages, and contribution types"
-        subtitle="A peer-reviewed, multidisciplinary journal of education and research — welcoming scholarly work across every field of knowledge."
+        subtitle="A peer-reviewed, multidisciplinary journal welcoming scholarly work across every field of knowledge."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Aim & Scope" },
@@ -73,9 +73,8 @@ async function ScopeContent() {
             <h2>Our aim</h2>
             <p>
               <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}({BRAND.nameRoman}) is dedicated to promoting excellence in
-              education, research, and scholarly dialogue across diverse
-              fields of knowledge. The journal provides a dynamic platform
+              {" "}({BRAND.nameRoman}) is dedicated to promoting scholarly
+              excellence and dialogue across diverse fields of knowledge. The journal provides a dynamic platform
               for researchers, academicians, educators, professionals, and
               students to share innovative ideas, original research, and
               critical perspectives.

@@ -2,9 +2,9 @@ import { Mail, Megaphone } from "lucide-react";
 import { Container } from "@/app/components/containers/common/Container";
 import { journalMeta } from "@/app/lib/services/mock/journal.mock";
 
-/** Format ISSN for display: real number when assigned, "Applied for" otherwise. */
+/** Format ISSN for display: real number when assigned, "N/A" otherwise. */
 function formatIssn(v: string | null): string {
-  return v && v.length > 0 ? v : "Applied for";
+  return v && v.length > 0 ? v : "N/A";
 }
 
 export function TopBar() {

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/app/components/ui/avatar";
@@ -78,7 +80,7 @@ function CompactInner({ editor }: { editor: Editor }) {
           {editor.orcid ? (
             <span className="text-brand-primary">{editor.orcid}</span>
           ) : (
-            <span className="italic">Pending</span>
+            <span className="italic">Not available</span>
           )}
         </p>
       </div>
@@ -122,7 +124,7 @@ function FeaturedInner({ editor }: { editor: Editor }) {
               {editor.orcid}
             </a>
           ) : (
-            <span className="italic">Awaiting confirmation</span>
+            <span className="italic">Not available</span>
           )}
         </p>
         {editor.specializations?.length ? (
