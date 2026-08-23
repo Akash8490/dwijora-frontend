@@ -53,15 +53,45 @@ export default function PeerReviewPage() {
           </ul>
           <h2>Confidentiality</h2>
           <p>
-            Manuscripts and reviews are treated as strictly confidential. Reviewers must not discuss the manuscript or share it with third parties.
+            Manuscripts and reviews are treated as strictly confidential.
+            Reviewer identities remain confidential under the
+            journal&rsquo;s stated double-blind model. Reviewers must not
+            discuss the manuscript or share it with third parties.
           </p>
           <h2>Conflicts of interest</h2>
+          <ul>
+            <li>
+              <strong>Editors</strong> must not handle manuscripts where
+              they have a personal, professional, financial, or
+              institutional conflict of interest. Handling responsibility
+              is transferred to another editor.
+            </li>
+            <li>
+              <strong>Reviewers</strong> must declare any real or perceived
+              conflicts of interest <em>before</em> accepting a review
+              assignment. When in doubt, decline the review.
+            </li>
+          </ul>
+          <h2>Editorial decision</h2>
           <p>
-            Reviewers and handling editors must declare any real or perceived conflicts of interest and recuse themselves where appropriate.
+            Final decisions are based on the handling editor&rsquo;s
+            judgment of the manuscript&rsquo;s scholarly merit, informed
+            by the reviewers&rsquo; comments. Decisions do <strong>not</strong>{" "}
+            automatically follow a numerical reviewer vote — reviewer
+            input is advisory, and the editor may weight reviews
+            differently based on expertise, depth of engagement, and
+            evidence provided.
           </p>
           <h2>Appeals</h2>
           <p>
-            Authors may appeal editorial decisions in writing to the Editor-in-Chief, providing a clear response to reviewer comments. Appeals are considered by an independent editor and resolved within 30 days.
+            Authors may appeal editorial decisions in writing to the
+            Editor-in-Chief within 30 days of the decision letter,
+            providing a clear response to reviewer comments and, where
+            relevant, additional evidence. Appeals are considered by an
+            independent editor who did not handle the original submission
+            and are resolved within 30 days of receipt. The
+            Editor-in-Chief&rsquo;s final decision on an appeal is
+            binding.
           </p>
         </Prose>
       </Container>

@@ -95,6 +95,86 @@ export default function EthicsPage() {
             trusted repository and to include data availability statements in
             their manuscripts.
           </p>
+
+          <h2>Research involving human participants</h2>
+          <p>
+            Where research involves human participants, authors must comply
+            with applicable ethical standards and provide ethics
+            committee / institutional approval information where required.
+            Manuscripts must state the name of the approving body and the
+            approval reference. Studies without a required approval will
+            not be considered.
+          </p>
+
+          <h2>Informed consent</h2>
+          <p>
+            When individual participants, patients, or their data or
+            images are included, authors must confirm that appropriate
+            informed consent was obtained and that any personally
+            identifying details have been anonymised unless the individual
+            has given written permission to be identified.
+          </p>
+
+          <h2>Conflicts of interest</h2>
+          <p>
+            Authors, editors, and reviewers must declare any financial,
+            personal, professional, institutional, or ideological
+            relationships that could reasonably be perceived as
+            influencing their work. Undisclosed conflicts of interest are
+            grounds for correction, retraction, or removal from the
+            editorial process.
+          </p>
+
+          <h2>Funding disclosure</h2>
+          <p>
+            Every manuscript must disclose all sources of funding for the
+            research, including grant numbers where applicable. If no
+            funding was received, authors should state so explicitly.
+          </p>
+
+          <h2>Authorship and contributorship</h2>
+          <p>
+            Author eligibility follows the four ICMJE criteria: substantial
+            contribution to conception / design / analysis / interpretation;
+            drafting or critically revising the work; final approval of the
+            version to be published; and accountability for all aspects of
+            the work. Contributions of individuals who do not meet all four
+            criteria should be acknowledged rather than listed as authors.
+            Authorship changes after submission require written agreement
+            from every author and editorial approval.
+          </p>
+
+          <h2>Duplicate submission and publication</h2>
+          <p>
+            Manuscripts under consideration by another journal, or
+            substantially overlapping with previously published work, are
+            not accepted. Substantially expanded or reanalysed versions of
+            a conference paper are considered on a case-by-case basis and
+            must clearly cite the earlier work.
+          </p>
+
+          <h2>Fabrication and falsification</h2>
+          <p>
+            Fabrication (invention of data or results) and falsification
+            (manipulation of data, images, methods, or results in ways
+            that misrepresent the research) are serious forms of research
+            misconduct. Any such findings result in immediate rejection or
+            retraction and notification of the authors&rsquo; institutions.
+          </p>
+
+          <h2>Generative AI in scholarly writing</h2>
+          <p>
+            Authors may use AI-assisted tools for language improvement,
+            formatting, or limited research assistance where appropriate.
+            Authors remain fully responsible for the accuracy, originality,
+            integrity, and ethical compliance of their work. Any
+            substantive use of generative AI in preparing the manuscript
+            must be disclosed. AI tools <strong>must not be listed as
+            authors</strong> and cannot bear responsibility for the
+            work. Full submission-time rules are on the{" "}
+            <Link href={ROUTES.AUTHOR_GUIDELINES}>Instructions for
+            Authors</Link> page.
+          </p>
         </Prose>
       </Container>
     </>

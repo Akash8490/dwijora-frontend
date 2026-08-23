@@ -6,6 +6,7 @@ import type {
   Paper,
   Volume,
 } from "@/app/utils/types/journal.type";
+import type { IndexingPartner } from "@/app/lib/services/mock/journal.mock";
 
 export interface HomeViewData {
   meta: JournalMeta;
@@ -15,7 +16,7 @@ export interface HomeViewData {
   latestPapers: Paper[];
   categoryById: Record<string, Category>;
   editorsPreview: Editor[];
-  indexing: string[];
+  indexing: IndexingPartner[];
   totals: { papers: number; issues: number; volumes: number; authors: number };
 }
 
@@ -27,7 +28,7 @@ export function transformHomeData(input: {
   latestPapers: Paper[];
   categories: Category[];
   editors: Editor[];
-  indexing: string[];
+  indexing: IndexingPartner[];
   allPapersCount: number;
   allIssuesCount: number;
 }): HomeViewData {

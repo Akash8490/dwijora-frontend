@@ -28,11 +28,22 @@ export default function PlagiarismPolicyPage() {
       />
       <Container className="py-14 md:py-20 max-w-3xl">
         <Prose>
-          <Callout tone="info" title="UGC alignment">
-            Viśvasaṃvid follows the University Grants Commission (Promotion of
-            Academic Integrity and Prevention of Plagiarism in Higher
-            Educational Institutions) Regulations, 2018 for evaluating
-            similarity in submitted manuscripts.
+          <Callout tone="info" title="Academic-integrity principles">
+            Viśvasaṃvid&rsquo;s plagiarism handling is aligned with the
+            academic-integrity principles set out by the University Grants
+            Commission (Promotion of Academic Integrity and Prevention of
+            Plagiarism in Higher Educational Institutions) Regulations,
+            2018, and with COPE best practice.
+          </Callout>
+
+          <Callout tone="warning" title="Similarity scores are indicators, not proof">
+            Similarity scores are used as an editorial screening indicator
+            and are not, by themselves, a determination of plagiarism.
+            The editorial team evaluates the source, nature and context of
+            detected overlap. Authors may be asked to revise, explain or
+            correct substantial overlap, and serious academic misconduct
+            may result in rejection or further action under the
+            journal&rsquo;s ethics policy.
           </Callout>
 
           <h2>Originality expected</h2>

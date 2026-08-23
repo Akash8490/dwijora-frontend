@@ -198,7 +198,7 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
                     </a>
                   ) : (
                     <span className="italic text-brand-muted">
-                      Awaiting confirmation
+                      Not available
                     </span>
                   )}
                 </dd>

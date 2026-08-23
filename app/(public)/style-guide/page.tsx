@@ -111,10 +111,13 @@ export default function StyleGuidePage() {
               <AccentRule />
             </div>
           </div>
-          <div className="flex gap-2">
-            <IndexingBadge name="Google Scholar" />
-            <IndexingBadge name="ROAD" />
-            <IndexingBadge name="Scilit" />
+          <div className="flex flex-wrap items-start gap-2">
+            <IndexingBadge
+              name="Google Scholar"
+              status="Discoverability subject to crawling"
+            />
+            <IndexingBadge name="ROAD" status="Application planned" />
+            <IndexingBadge name="Scilit" status="Application planned" />
           </div>
         </div>
       </Section>

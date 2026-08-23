@@ -964,11 +964,45 @@ export const journalPages: JournalPage[] = [
   { id: "pg8", slug: "terms", title: "Terms & Conditions", updatedAt: "2026-06-01", status: "published" },
 ];
 
-export const indexingPartners = [
-  "Google Scholar",
-  "ROAD",
-  "CrossRef (planned)",
-  "DOAJ (in review)",
-  "Scilit",
-  "BASE",
+/**
+ * Indexing partners with per-service status labels per the ISSN India audit
+ * (§8 — status table). Each service's status is a truthful, verifiable
+ * statement so ISSN reviewers cannot flag the site for misleading claims.
+ *
+ * `label` renders inside the pill (short name). `status` renders below it
+ * (long-form truthful status). Change a `status` to "Confirmed listed"
+ * (and add a `href` to the official record) as evidence lands.
+ */
+export interface IndexingPartner {
+  label: string;
+  status: string;
+  href?: string;
+}
+
+export const indexingPartners: IndexingPartner[] = [
+  {
+    label: "Google Scholar",
+    status:
+      "Discoverability subject to Google Scholar’s independent crawling and indexing processes",
+  },
+  {
+    label: "ROAD",
+    status: "Application planned",
+  },
+  {
+    label: "Scilit",
+    status: "Application planned",
+  },
+  {
+    label: "BASE",
+    status: "Application planned",
+  },
+  {
+    label: "Crossref",
+    status: "Planned — membership / registration not yet active",
+  },
+  {
+    label: "DOAJ",
+    status: "Application planned once eligibility criteria are met",
+  },
 ];
