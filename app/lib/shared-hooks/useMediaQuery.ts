@@ -18,3 +18,8 @@ export function useMediaQuery(query: string): boolean {
 }
 
 export const useIsMobile = () => useMediaQuery("(max-width: 767px)");
+
+/** True only where the browser renders PDFs inline (desktop pointer devices);
+    iOS Safari and Chrome on Android do not, so they get a new-tab handoff. */
+export const useCanEmbedPdf = () =>
+  useMediaQuery("(min-width: 768px) and (pointer: fine)");

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Download, ExternalLink, Calendar, FileText, Users } from "lucide-react";
+import { ExternalLink, Calendar, FileText, Users } from "lucide-react";
 import { PageHero } from "@/app/components/containers/common/PageHero";
 import { Section } from "@/app/components/containers/common/Section";
 import { Container } from "@/app/components/containers/common/Container";
@@ -13,6 +13,7 @@ import { Button } from "@/app/components/ui/button";
 import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { CitationBox } from "@/app/(public)/paper/[slug]/CitationBox";
 import { ShareBar } from "@/app/(public)/paper/[slug]/ShareBar";
+import { PdfActions } from "@/app/(public)/paper/[slug]/PdfActions";
 import { buildCitationMeta } from "@/app/(public)/paper/[slug]/citation.helper";
 import {
   getCategories,
@@ -259,17 +260,17 @@ export default async function PaperDetailPage({ params }: Params) {
 
           <aside className="space-y-4">
             <div className="rounded-xl border border-brand bg-card-brand p-5 md:p-6 paper-shadow">
-              <h3 className="font-display text-lg text-brand-ink">Download</h3>
+              <h3 className="font-display text-lg text-brand-ink">Full text</h3>
               <p className="mt-1 text-sm text-brand-muted">
-                Full text is available as a PDF under the journal&apos;s open-access licence.
+                Read the article in your browser or download the PDF &mdash; open access
+                under the journal&apos;s licence.
               </p>
               <div className="mt-4 flex flex-col gap-2">
-                <Button asChild size="lg">
-                  <a href={paper.pdfUrl} download>
-                    <Download className="mr-2 h-4 w-4" />
-                    Download PDF
-                  </a>
-                </Button>
+                <PdfActions
+                  url={paper.pdfUrl}
+                  title={breadcrumbTitle}
+                  fileName={`${paper.slug}.pdf`}
+                />
                 {paper.doi ? (
                   <Button asChild variant="outline">
                     <a

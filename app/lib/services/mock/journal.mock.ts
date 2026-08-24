@@ -495,7 +495,7 @@ export const editors: Editor[] = [
       "Scholarly Writing",
     ],
     bio: "Dr. Dilipbhai J. Vasava is a teacher educator, researcher, and author specialising in Education and Hindi Literature, serving as Assistant Professor at M.B. Patel College of Education, Sardar Patel University, with over 12 years of teaching experience. He has authored 13 books, translated two, and published more than 50 research papers in peer-reviewed and UGC CARE-listed journals, and has guided eight M.Ed. dissertations. A member of several academic bodies including the Sardar Patel University Board of Studies, he has participated in over 100 national and international conferences and workshops as a presenter and keynote speaker.",
-    email: null,
+    email: "dilipvasava@spuvvn.edu",
     profileUrl: "https://www.spuvvn.edu/team/mr-dilipbhai-j-vasava/",
     photoUrl: "/editorial-board/dilipbhai-j-vasava.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
