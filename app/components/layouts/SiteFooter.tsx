@@ -144,9 +144,6 @@ export function SiteFooter() {
             {issnLabel(journalMeta.issn, "N/A")} · e-ISSN:{" "}
             {issnLabel(journalMeta.eIssn, "Applied for")}
           </p>
-          <p>
-            Published by Institute of Multidisciplinary Research &amp; Journals
-          </p>
         </div>
       </Container>
     </footer>
