@@ -51,13 +51,13 @@ export default async function ContactPage() {
                 Publishing Body
               </h3>
               <ul className="mt-4 space-y-3 text-sm">
-                <li className="flex items-start gap-3">
+                {/* <li className="flex items-start gap-3">
                   <Building2 className="mt-0.5 h-4 w-4 text-brand-primary" aria-hidden />
                   <span className="text-brand-ink">
                     <strong className="block">Institute of Multidisciplinary Research &amp; Journals (IMRJ)</strong>
                     <span className="text-brand-muted">Publisher of {meta.name}</span>
                   </span>
-                </li>
+                </li> */}
                 <li className="flex items-start gap-3">
                   <User2 className="mt-0.5 h-4 w-4 text-brand-primary" aria-hidden />
                   <span className="text-brand-ink">

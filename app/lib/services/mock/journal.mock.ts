@@ -114,7 +114,7 @@ export const authorsPool: Author[] = [
     "a-rashmikaben-bhoi",
     "डॉ. रश्मिकाबेन भीखाभाई भोई",
     "Maharaja Sayajirao University of Baroda, Vadodara, Gujarat, India",
-    { country: "India", isCorresponding: true },
+    { country: "India", isCorresponding: true, email: "rashmikabhoi220@gmail.com" },
   ),
 ];
 
