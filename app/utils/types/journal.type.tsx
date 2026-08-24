@@ -170,9 +170,10 @@ export interface JournalMeta {
    *  renders "N/A" wherever this is displayed rather than showing a
    *  fake 0000-shaped placeholder (an ISSN India predatory-journal red flag). */
   issn: string | null;
-  /** Online e-ISSN once assigned. Same null-means-"N/A" contract as
-   *  `issn`. Google Scholar's `citation_issn` meta tag is only emitted when
-   *  non-null — a fabricated ISSN there would poison Scholar's index. */
+  /** Online e-ISSN once assigned. `null` renders as "Applied for" (the
+   *  application to CSIR-NIScPR is in progress). Google Scholar's
+   *  `citation_issn` meta tag is only emitted when non-null — a fabricated
+   *  ISSN there would poison Scholar's index. */
   eIssn: string | null;
   publisher: string;
   /** Full postal address of the publishing body / registered proprietor,

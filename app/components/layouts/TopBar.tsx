@@ -2,9 +2,9 @@ import { Mail, Megaphone } from "lucide-react";
 import { Container } from "@/app/components/containers/common/Container";
 import { journalMeta } from "@/app/lib/services/mock/journal.mock";
 
-/** Format ISSN for display: real number when assigned, "N/A" otherwise. */
-function formatIssn(v: string | null): string {
-  return v && v.length > 0 ? v : "N/A";
+/** Real number when assigned; otherwise the caller-supplied fallback. */
+function formatIssn(v: string | null, fallback: string): string {
+  return v && v.length > 0 ? v : fallback;
 }
 
 export function TopBar() {
@@ -21,8 +21,8 @@ export function TopBar() {
             ·
           </span>
           <span>
-            ISSN: {formatIssn(journalMeta.issn)} · e-ISSN:{" "}
-            {formatIssn(journalMeta.eIssn)}
+            ISSN: {formatIssn(journalMeta.issn, "N/A")} · e-ISSN:{" "}
+            {formatIssn(journalMeta.eIssn, "Applied for")}
           </span>
         </span>
         <a

@@ -179,7 +179,7 @@ export default async function PaperDetailPage({ params }: Params) {
               </span>
             </div>
             <div className="text-brand-muted text-xs uppercase tracking-wider">
-              ISSN (Online) {meta.eIssn ?? "N/A"}
+              ISSN (Online) {meta.eIssn ?? "Applied for"}
               {paper.doi ? (
                 <>
                   <span className="mx-2" aria-hidden>·</span>

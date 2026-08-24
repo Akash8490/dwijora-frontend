@@ -40,7 +40,7 @@ export function JournalParticularsTable({
     {
       label: "ISSN (Online)",
       value: meta.eIssn ?? (
-        <span className="italic text-brand-muted">N/A</span>
+        <span className="italic text-brand-muted">Applied for</span>
       ),
     },
     { label: "Publisher name", value: meta.publisher },

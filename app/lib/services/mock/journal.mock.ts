@@ -18,12 +18,13 @@ export const journalMeta: JournalMeta = {
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
   // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
-  // Until then keep as `null` — the site renders "N/A" wherever
-  // these fields display. NEVER put a 0000-shaped placeholder here: ISSN
-  // India treats fake-looking identifiers as a predatory-journal red flag,
-  // and a fabricated `citation_issn` on paper pages would poison Google
-  // Scholar's index. First 2 issues + ≥5 articles/issue are required
-  // before the ISSN application can be submitted (per ISSN Publisher FAQ).
+  // Print ISSN renders "N/A" while journal remains online-only; online
+  // e-ISSN renders "Applied for" until the application returns a number.
+  // NEVER put a 0000-shaped placeholder here: ISSN India treats fake
+  // identifiers as a predatory-journal red flag, and a fabricated
+  // `citation_issn` on paper pages would poison Google Scholar's index.
+  // First 2 issues + ≥5 articles/issue are required before the ISSN
+  // application can be submitted (per ISSN Publisher FAQ).
   issn: null,
   eIssn: null,
   publisher: "Mr. Siddhant Boriya",
@@ -526,8 +527,7 @@ export const editors: Editor[] = [
       "Senate Member — Sardar Patel University",
       "Board of Studies (Physical Education) — Swarnim Gujarat Sports University",
     ],
-    // TODO(client): confirm this is the preferred public email
-    email: "ajit970@yahoo.com",
+    email: "vjpped@cesociety.in",
     profileUrl: "https://www.vjbped.ac.in/",
     photoUrl: "/editorial-board/ajitsinh-r-gohil.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
@@ -571,23 +571,43 @@ export const editors: Editor[] = [
       "Department of Curriculum and Instruction, The Open University of Tanzania",
     country: "Tanzania",
     qualifications: [
-      "Ph.D. (Education), Gujarat University, India — Teacher Education & Curriculum Studies",
-      "M.Ed. (Science Education)",
-      "B.Ed. (Physical Education, Sport and Culture)",
+      "Ph.D. (Education), Gujarat University, India (2019–2023) — Teacher Education & Curriculum Studies. Thesis: “Effectiveness of Teacher Education Curriculum in Enhancing Pre-Service Science Teachers’ Competences in Education for Sustainable Development in Tanzania”",
+      "M.Ed. (Science Education), University of Dar es Salaam (2012–2014, GPA 4.8). Dissertation: “Biological Correlates of Physical Activity Behaviour Among Primary School Children in Nyamagana Municipality, Tanzania”",
+      "B.Ed. (Physical Education, Sport and Culture), University of Dar es Salaam (2004–2008, GPA 4.0 honours)",
     ],
     specializations: [
-      "Curriculum Development",
+      "Curriculum Development & Evaluation",
+      "Teacher Education",
       "Educational Technology",
       "Teacher Professionalism",
       "Measurement & Evaluation",
       "Education for Sustainable Development",
     ],
-    bio: "Dr. Edgar Fidel Nderego is an accomplished educator, curriculum specialist, researcher, and academic leader with extensive experience in higher education, teacher education, curriculum development, and educational research. He holds a Ph.D. in Education from Gujarat University, India, with specialization in Teacher Education and Curriculum Studies, in addition to a Master of Education in Science Education and a Bachelor of Education in Physical Education, Sport and Culture. Currently serving as a Lecturer in the Department of Curriculum and Instruction at The Open University of Tanzania and Director of the Simiyu Regional Centre, he has over nine years of undergraduate teaching experience and postgraduate teaching and research supervision. His expertise includes curriculum development, educational technology, teacher professionalism, measurement and evaluation, and education for sustainable development. Dr. Nderego has contributed to UNESCO curriculum initiatives, authored several peer-reviewed research publications, presented papers at international conferences, supervised postgraduate research, and held various academic leadership positions. His commitment to quality education, innovative pedagogy, and sustainable development has established him as an active contributor to educational research, curriculum reform, and capacity building in Tanzania and beyond.",
+    bio: "Dr. Edgar Fidel Nderego is an accomplished educator, curriculum specialist, researcher and academic leader with nine years of undergraduate teaching and one year of postgraduate teaching, research and research supervision. He holds a Ph.D. in Education from Gujarat University, India (2023), specialising in Teacher Education and Curriculum Studies, an M.Ed. in Science Education from the University of Dar es Salaam (GPA 4.8), and a B.Ed. in Physical Education, Sport and Culture from the University of Dar es Salaam (GPA 4.0 honours). He is currently a Lecturer in the Department of Curriculum and Instruction at The Open University of Tanzania (from July 2023), and has previously served as Assistant Lecturer at OUT (2016–2023) and Part-Time Lecturer at St. Augustine University, Mwanza (2017–2019). He has contributed to UNESCO's 2023 Curriculum Resource Pack for training educators and teachers on curriculum, and has published in international journals including the International Journal of Education & Management Studies, the International Journal of Humanities & Social Studies, and the Journal of Research Innovation and Implications in Education. He is currently supervising eleven Master's candidates. His teaching covers Curriculum Development and Evaluation, Teacher Professionalism and Classroom Practice, Measurement and Evaluation, and Educational Media and Technology at diploma, undergraduate and postgraduate levels.",
+    positions: [
+      "Lecturer, Department of Curriculum and Instruction, The Open University of Tanzania (2023–present)",
+      "Assistant Lecturer, Curriculum and Instruction, The Open University of Tanzania (2016–2023)",
+      "Part-Time Lecturer, St. Augustine University of Tanzania, Mwanza (2017–2019)",
+      "Deputy Director — Research Department, Tanzania Resources Mobilization and Development Initiatives (TAREMODI), Mwanza (2011–2014)",
+      "Head of Sport Sciences Department, Malya College of Sports Development (2009–2014)",
+      "Dean of Students, Malya College of Sports Development (2008–2014)",
+    ],
+    publications: [
+      "Contributor — UNESCO Curriculum Resource Pack: Transforming Pedagogy and Learning — Handbook for Training Educators and Teachers on Curriculum (2023)",
+      "“Opportunities and Challenges of AI towards Education: A Systematic Literature Review”, International Journal of Education & Management Studies, 13(3), 266–271 (2023)",
+      "“Advanced Planning: Reforming Teacher Education Curriculum in Universities to Prepare CBC-Compliant Secondary School Teachers for East Africa”, Journal of Research Innovation and Implications in Education, 6(2) (2022)",
+      "“Re-engineering Quality Assurance Functions to Support Implementation of CBC in Secondary Schools: Lessons for Tanzania”, International Journal of Humanities & Social Studies, 10(5) — https://doi.org/10.24940/theijhss/2022/v10/i5/HS2205-012",
+      "“Psychological Challenges of Cyberspace: A Systematic Review of Meta-analysis” — https://doi.org/10.5281/zenodo.7163803",
+      "“Sex Differences in Physical Activity Participation”, International Journal of Education, 4(1) (2015)",
+    ],
     // Institutional email (ISSN-preferred). Alternative address on file:
     // needgarn@gmail.com — kept private per ISSN India guidelines that
     // discourage personal Gmail addresses on the public board.
     email: "edgar.nderego@out.ac.tz",
-    profileUrl: null,
+    // TODO(client): replace with Dr. Nderego's specific OUT staff-profile
+    // URL if/when it becomes available; using the institutional homepage
+    // as a stable, verifiable link in the interim.
+    profileUrl: "https://www.out.ac.tz/",
     photoUrl: "/editorial-board/edgar-fidel-nderego.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
     orcid: null,
@@ -618,7 +638,7 @@ export const editors: Editor[] = [
       "Gujarat Gaurav Puraskar",
       "Gujarat Sahitya Akademi literary awards",
     ],
-    email: "pro.maheshsparsh@gmail.com",
+    email: "MAHESHKUMAR.PARMAR01@gujgov.edu.in",
     profileUrl: null,
     photoUrl: "/editorial-board/maheshkumar-parmar-sparsh.jpg",
     // TODO(client): supply ORCID iD (ISSN India compulsory).
