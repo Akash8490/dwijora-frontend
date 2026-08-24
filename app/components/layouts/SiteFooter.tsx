@@ -8,8 +8,8 @@ import { BRAND } from "@/app/lib/brand";
 import { ROUTES } from "@/app/lib/routeEndPoints";
 import { journalMeta } from "@/app/lib/services/mock/journal.mock";
 
-function issnLabel(v: string | null): string {
-  return v && v.length > 0 ? v : "N/A";
+function issnLabel(v: string | null, fallback: string): string {
+  return v && v.length > 0 ? v : fallback;
 }
 
 const QUICK_LINKS = [
@@ -141,11 +141,11 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/60 md:flex-row md:items-center">
           <p>
             © {new Date().getFullYear()} Viśvasaṃvid · ISSN:{" "}
-            {issnLabel(journalMeta.issn)} · e-ISSN:{" "}
-            {issnLabel(journalMeta.eIssn)}
+            {issnLabel(journalMeta.issn, "N/A")} · e-ISSN:{" "}
+            {issnLabel(journalMeta.eIssn, "Applied for")}
           </p>
           <p>
-            Designed with care · Published by Institute of Multidisciplinary Research & Journals
+            Published by Institute of Multidisciplinary Research &amp; Journals
           </p>
         </div>
       </Container>

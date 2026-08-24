@@ -131,11 +131,7 @@ async function AboutContent() {
             <StatCard label="Frequency" value={meta.frequency.split(" (")[0]} hint={meta.frequency} icon={<Award className="h-4 w-4" />} />
             <StatCard
               label="ISSN / e-ISSN"
-              value={
-                meta.issn || meta.eIssn
-                  ? `${meta.issn ?? "N/A"} / ${meta.eIssn ?? "N/A"}`
-                  : "N/A"
-              }
+              value={`${meta.issn ?? "N/A"} / ${meta.eIssn ?? "Applied for"}`}
               hint="Assigned identifiers will appear here once ISSN India completes the registration."
               icon={<FileCheck2 className="h-4 w-4" />}
             />
