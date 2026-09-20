@@ -428,7 +428,7 @@ export const editors: Editor[] = [
     ],
     bio: "Dr. Prabhatbhai M. Kasra is an experienced teacher educator, researcher, and academic administrator with over 22 years in higher education, currently serving as Principal of Sardar Patel College of Education, Bakrol. He holds a Ph.D. in Education from Sardar Patel University, with doctoral research on the educational philosophy of Shrimad Rajchandra. He has authored more than 25 research papers, published books and edited academic volumes, and presented widely at national and international conferences. His academic interests include Teacher Education, Indian Knowledge Systems, Sanskrit Education, NEP 2020, and Research Methodology.",
     honours: ["Best Principal Award", "National Excellency Award"],
-    email: "prabhatkasra.bed@spec.edu.in",
+    email: "prabhatkasra@gmail.com",
     profileUrl:
       "https://www.spec.edu.in/specbed/Staff-Profile.aspx?cid=6&sid=336",
     photoUrl: "/editorial-board/prabhat-m-kasra.jpg",
@@ -913,9 +913,7 @@ export const editors: Editor[] = [
       "Academic Publishing Support",
     ],
     bio: "Mr. Bhavin Gadhvi is a scholar of Gujarati language and literature and a doctoral researcher at the Postgraduate Gujarati Department, Sardar Patel University, Vallabh Vidyanagar. He holds an M.A. in Gujarati, an M.Ed., a B.Ed., and a B.A. in Gujarati — all from Sardar Patel University — and has qualified the Gujarat State Eligibility Test (GSET) in Gujarati. He is currently pursuing his Ph.D. under the guidance of Dr. Mahendra K. Nayee on the topic \"Chāraṇī Sāhityamāṁ Vīra Rasa: Eka Adhyayana\" (a study of the heroic sentiment in Chāraṇī literature). He has participated in approximately 57 seminars, conferences and workshops, presented 19 research papers, and published in Shabdasrushti (Gujarat Sahitya Akademi), Mulya Shikshan, and the Ānanyāśāstram e-journal. He supports the journal on production, typesetting and technical publication tasks.",
-    // TODO(client): confirm this personal email is acceptable for public
-    // display; an institutional address (e.g. @spuvvn.edu) is preferred.
-    email: "bagadhvi@gmail.com",
+    email: "bhavingadhvi@spuvvn.edu",
     profileUrl: null,
     photoUrl: "/editorial-board/bhavin-gadhvi.jpg",
     orcid: "0009-0004-9786-3474",
