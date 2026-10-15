@@ -23,7 +23,6 @@ import { StepCard } from "@/app/components/containers/common/StepCard";
 import { StatCard } from "@/app/components/containers/common/StatCard";
 import { IndexingBadge } from "@/app/components/containers/common/IndexingBadge";
 import { MotionInView } from "@/app/components/containers/common/MotionInView";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { BRAND } from "@/app/lib/brand";
 import { ROUTES } from "@/app/lib/routeEndPoints";
 import { formatCount } from "@/app/(public)/_home/home.helper";
@@ -77,24 +76,18 @@ export function HomeView({ data }: HomeViewProps) {
                   {meta.tagline}
                 </span>
               </div>
-              <Sanskrit
-                as="h1"
-                variant="display"
-                className="mt-6 text-5xl md:text-7xl text-brand-ink"
-              >
-                {BRAND.nameDeva}
-              </Sanskrit>
-              <p className="mt-3 font-display text-2xl md:text-3xl italic text-brand-primary">
+              {/* Romanised title only — ISSN India requires one identical
+                  title form across the whole site. */}
+              <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.05] text-brand-ink">
                 {BRAND.nameRoman}
+              </h1>
+              <p className="mt-3 font-display text-2xl md:text-3xl italic text-brand-primary">
+                Universal Consciousness &amp; Knowledge
               </p>
               <AccentRule className="mt-5" />
-              <Sanskrit
-                as="p"
-                variant="quote"
-                className="mt-5 text-lg md:text-xl text-brand-accent-deep"
-              >
-                {BRAND.shlokaDeva}
-              </Sanskrit>
+              <p className="mt-5 font-display text-lg italic md:text-xl text-brand-accent-deep">
+                {BRAND.shlokaTranslit}
+              </p>
               <p className="mt-1 text-sm italic text-brand-muted">
                 {BRAND.shlokaTranslation}
               </p>
@@ -220,14 +213,12 @@ export function HomeView({ data }: HomeViewProps) {
         eyebrow="About the Journal"
         title={
           <>
-            <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-            {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
+            {BRAND.nameFull}
           </>
         }
         subtitle={
           <>
-            <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-            {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
+            {BRAND.nameFull}
             is an international, peer-reviewed, multidisciplinary journal
             dedicated to promoting scholarly excellence and dialogue across
             diverse fields of knowledge. The

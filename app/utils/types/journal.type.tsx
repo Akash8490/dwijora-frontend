@@ -162,7 +162,6 @@ export interface JournalPage {
 
 export interface JournalMeta {
   name: string;
-  nameDevanagari: string;
   shloka: string;
   shlokaTranslation: string;
   tagline: string;
@@ -190,7 +189,6 @@ export interface JournalMeta {
    *  hides the phone row rather than printing "+91 00000 00000" placeholders. */
   contactPhone: string | null;
   address: string;
-  frequency: string;
   scope: string;
   /** Calendar year the journal was first published (e.g. 2026). */
   startingYear: number;

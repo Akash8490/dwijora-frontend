@@ -26,7 +26,7 @@ import {
   apaCitation,
   formatDateLong,
   indicFontClass,
-  isIndicScript,
+  indicScriptOf,
   joinAuthorNames,
   mlaCitation,
   pageRange,
@@ -94,18 +94,20 @@ export default async function PaperDetailPage({ params }: Params) {
   const apa = apaCitation(paper, meta.name, volume.number, issue.number);
   const mla = mlaCitation(paper, meta.name, volume.number, issue.number);
   const paperLang = paper.language ?? "en";
-  const isIndic = isIndicScript(paper.language);
-  const isDeva = paper.language === "hi" || paper.language === "sa";
-  const indicClass = indicFontClass(paper.language);
-  const heroTitle = isIndic ? (
-    isDeva ? (
-      <Sanskrit lang={paper.language as "hi"} variant="display">
+  // Script is detected from the rendered strings, not from `paper.language`:
+  // papers whose PDF is in Hindi/Gujarati are presented in English here.
+  const titleScript = indicScriptOf(paper.title);
+  const abstractScript = indicScriptOf(paper.abstract);
+  const keywordScript = indicScriptOf(paper.keywords.join(" "));
+  const heroTitle = titleScript ? (
+    titleScript === "devanagari" ? (
+      <Sanskrit lang={paperLang as "hi"} variant="display">
         {paper.title}
       </Sanskrit>
     ) : (
       <span
         lang={paperLang}
-        className={`${indicClass} font-semibold leading-[1.1] tracking-tight`}
+        className={`${indicFontClass(paper.title)} font-semibold leading-[1.1] tracking-tight`}
       >
         {paper.title}
       </span>
@@ -113,7 +115,8 @@ export default async function PaperDetailPage({ params }: Params) {
   ) : (
     paper.title
   );
-  const breadcrumbTitle = isIndic && paper.titleAlt ? paper.titleAlt : paper.title;
+  const breadcrumbTitle =
+    titleScript && paper.titleAlt ? paper.titleAlt : paper.title;
 
   return (
     <>
@@ -196,13 +199,16 @@ export default async function PaperDetailPage({ params }: Params) {
           <article>
             <Prose>
               <h2>Abstract</h2>
-              {isIndic ? (
-                isDeva ? (
-                  <Sanskrit as="p" lang={paper.language as "hi"} variant="body">
+              {abstractScript ? (
+                abstractScript === "devanagari" ? (
+                  <Sanskrit as="p" lang={paperLang as "hi"} variant="body">
                     {paper.abstract}
                   </Sanskrit>
                 ) : (
-                  <p lang={paperLang} className={`${indicClass} leading-relaxed`}>
+                  <p
+                    lang={paperLang}
+                    className={`${indicFontClass(paper.abstract)} leading-relaxed`}
+                  >
                     {paper.abstract}
                   </p>
                 )
@@ -218,9 +224,11 @@ export default async function PaperDetailPage({ params }: Params) {
                   key={k}
                   variant="secondary"
                   className={`bg-brand-surface-2 text-brand-ink font-normal ${
-                    isIndic ? `${indicClass} text-base` : ""
+                    keywordScript
+                      ? `${indicFontClass(k)} text-base`
+                      : ""
                   }`}
-                  {...(paperLang !== "en" ? { lang: paperLang } : {})}
+                  {...(keywordScript ? { lang: paperLang } : {})}
                 >
                   {k}
                 </Badge>

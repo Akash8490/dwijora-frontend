@@ -19,7 +19,6 @@ import {
   FileText,
   LayersIcon,
 } from "lucide-react";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { getCategories } from "@/app/lib/services/journal.service";
 import { buildMetadata } from "@/app/lib/seo";
 import { BRAND } from "@/app/lib/brand";
@@ -72,8 +71,7 @@ async function ScopeContent() {
           <Prose>
             <h2>Our aim</h2>
             <p>
-              <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-              {" "}({BRAND.nameRoman}) is dedicated to promoting scholarly
+              {BRAND.nameRoman}{" "}is dedicated to promoting scholarly
               excellence and dialogue across diverse fields of knowledge. The journal provides a dynamic platform
               for researchers, academicians, educators, professionals, and
               students to share innovative ideas, original research, and

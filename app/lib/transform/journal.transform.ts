@@ -3,24 +3,32 @@ import type {
   BoardGroup,
   Editor,
   Paper,
-  PaperLanguage,
 } from "@/app/utils/types/journal.type";
 
+export type IndicScript = "devanagari" | "gujarati";
+
 /**
- * Whether the paper's primary language uses an Indic script requiring a
- * non-Latin font (Devanagari for Sanskrit/Hindi, Gujarati for Gujarati).
+ * Which Indic script a string is actually written in, or null for Latin text.
+ *
+ * Detection is deliberately based on the TEXT, not on `paper.language`: a
+ * paper whose PDF of record is in Hindi or Gujarati is presented in English on
+ * the site (ISSN India correction, Oct 2026), and Latin text must not be
+ * stamped with a Devanagari font or a `lang="hi"` attribute.
  */
-export function isIndicScript(language?: PaperLanguage): boolean {
-  return language === "hi" || language === "sa" || language === "gu";
+export function indicScriptOf(value?: string): IndicScript | null {
+  if (/[\u0900-\u097F]/.test(value ?? "")) return "devanagari";
+  if (/[\u0A80-\u0AFF]/.test(value ?? "")) return "gujarati";
+  return null;
 }
 
 /**
- * Tailwind utility class exposing the correct font token for the paper's
- * script — empty string for Latin-script papers so the site defaults apply.
+ * Tailwind utility class exposing the correct font token for a string's
+ * script — empty string for Latin text so the site defaults apply.
  */
-export function indicFontClass(language?: PaperLanguage): string {
-  if (language === "hi" || language === "sa") return "font-deva-serif";
-  if (language === "gu") return "font-guj-serif";
+export function indicFontClass(value?: string): string {
+  const script = indicScriptOf(value);
+  if (script === "devanagari") return "font-deva-serif";
+  if (script === "gujarati") return "font-guj-serif";
   return "";
 }
 

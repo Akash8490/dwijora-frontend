@@ -1,5 +1,4 @@
 import { cn } from "@/app/lib/utils";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import type { JournalMeta } from "@/app/utils/types/journal.type";
 
 /**
@@ -8,9 +7,13 @@ import type { JournalMeta } from "@/app/utils/types/journal.type";
  * Point 6 of the ISSN India detailed information document).
  *
  * The block is presented as a two-column labelled definition list so the
- * ISSN reviewer can scan every mandatory field (Title, Frequency, ISSN,
- * Publisher name/address, Starting Year, Subject, Language, Publication
- * Format, Email, Mobile) at a glance.
+ * ISSN reviewer can scan every mandatory field (Title, ISSN, Publisher
+ * name/address, Starting Year, Subject, Language, Publication Format,
+ * Email, Mobile) at a glance.
+ *
+ * The title is printed in the romanised form only, and the publication
+ * frequency row is intentionally absent — both per the ISSN India
+ * corrections of Oct 2026.
  */
 export function JournalParticularsTable({
   meta,
@@ -22,15 +25,9 @@ export function JournalParticularsTable({
   const rows: Array<{ label: string; value: React.ReactNode }> = [
     {
       label: "Title",
-      value: (
-        <>
-          <Sanskrit>{meta.nameDevanagari}</Sanskrit>
-          {" "}({meta.name}) – Universal Consciousness &amp; Knowledge
-        </>
-      ),
+      value: <>{meta.name} – Universal Consciousness &amp; Knowledge</>,
     },
     { label: "Subtitle", value: meta.tagline },
-    { label: "Frequency", value: meta.frequency },
     {
       label: "ISSN (Print)",
       value: meta.issn ?? (
