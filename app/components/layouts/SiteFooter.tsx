@@ -3,7 +3,6 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Container } from "@/app/components/containers/common/Container";
 import { JournalWordmark } from "@/app/components/containers/common/JournalWordmark";
 import { AccentRule } from "@/app/components/containers/common/AccentRule";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { BRAND } from "@/app/lib/brand";
 import { ROUTES } from "@/app/lib/routeEndPoints";
 import { journalMeta } from "@/app/lib/services/mock/journal.mock";
@@ -40,13 +39,9 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <JournalWordmark href="" size="md" onDark />
-            <Sanskrit
-              as="p"
-              variant="quote"
-              className="mt-6 text-lg text-brand-accent"
-            >
-              {BRAND.shlokaDeva}
-            </Sanskrit>
+            <p className="mt-6 font-display text-lg italic text-brand-accent">
+              {BRAND.shlokaTranslit}
+            </p>
             <p className="mt-1 text-xs italic text-white/60">
               {BRAND.shlokaTranslation}
             </p>

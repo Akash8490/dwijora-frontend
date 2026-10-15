@@ -7,7 +7,7 @@ import type { Paper } from "@/app/utils/types/journal.type";
 import {
   formatDateLong,
   indicFontClass,
-  isIndicScript,
+  indicScriptOf,
   joinAuthorNames,
   pageRange,
 } from "@/app/lib/transform/journal.transform";
@@ -20,14 +20,16 @@ export interface PaperCardProps {
 }
 
 export function PaperCard({ paper, categoryName, compact, className }: PaperCardProps) {
-  const langAttr =
-    paper.language && paper.language !== "en" ? { lang: paper.language } : {};
-  const titleFont = isIndicScript(paper.language)
-    ? `${indicFontClass(paper.language)} font-semibold`
+  // Styling follows the text that is actually rendered, not the language of
+  // the PDF — non-English papers are presented in English on the site.
+  const titleIndic = indicScriptOf(paper.title) !== null;
+  const bodyIndic = indicScriptOf(paper.abstract) !== null;
+  const titleLang = titleIndic && paper.language ? { lang: paper.language } : {};
+  const bodyLang = bodyIndic && paper.language ? { lang: paper.language } : {};
+  const titleFont = titleIndic
+    ? `${indicFontClass(paper.title)} font-semibold`
     : "font-display";
-  const bodyFont = isIndicScript(paper.language)
-    ? indicFontClass(paper.language)
-    : "";
+  const bodyFont = bodyIndic ? indicFontClass(paper.abstract) : "";
 
   return (
     <Card
@@ -53,7 +55,7 @@ export function PaperCard({ paper, categoryName, compact, className }: PaperCard
             titleFont,
             compact ? "text-lg" : "text-xl md:text-[1.35rem]",
           )}
-          {...langAttr}
+          {...titleLang}
         >
           <Link
             href={`/paper/${paper.slug}`}
@@ -81,7 +83,7 @@ export function PaperCard({ paper, categoryName, compact, className }: PaperCard
             bodyFont,
             compact ? "line-clamp-2" : "line-clamp-4",
           )}
-          {...langAttr}
+          {...bodyLang}
         >
           {paper.abstract}
         </p>

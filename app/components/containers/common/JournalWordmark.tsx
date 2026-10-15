@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BRAND } from "@/app/lib/brand";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { cn } from "@/app/lib/utils";
 
 export interface JournalWordmarkProps {
@@ -17,20 +16,17 @@ export interface JournalWordmarkProps {
 
 const SIZE = {
   sm: {
-    deva: "text-xl md:text-2xl",
-    latin: "text-xs md:text-sm",
+    name: "text-lg md:text-xl",
     tagline: "text-[0.65rem]",
     emblem: 36,
   },
   md: {
-    deva: "text-2xl md:text-3xl",
-    latin: "text-sm md:text-base",
+    name: "text-xl md:text-2xl",
     tagline: "text-xs",
     emblem: 44,
   },
   lg: {
-    deva: "text-4xl md:text-5xl",
-    latin: "text-base md:text-lg",
+    name: "text-3xl md:text-4xl",
     tagline: "text-sm",
     emblem: 64,
   },
@@ -65,17 +61,13 @@ export function JournalWordmark({
 
   const text = (
     <span className="flex flex-col leading-tight">
-      <Sanskrit
-        variant="wordmark"
-        className={cn(onDark ? "text-white" : "text-brand-ink", s.deva)}
-      >
-        {BRAND.nameDeva}
-      </Sanskrit>
+      {/* Romanised title only — the ISSN India office requires one identical
+          title form everywhere the journal appears. */}
       <span
         className={cn(
-          "font-display italic tracking-wide",
-          onDark ? "text-brand-accent" : "text-brand-primary",
-          s.latin,
+          "font-display tracking-wide",
+          onDark ? "text-white" : "text-brand-ink",
+          s.name,
         )}
       >
         {BRAND.nameRoman}

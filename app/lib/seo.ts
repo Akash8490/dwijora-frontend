@@ -10,7 +10,6 @@ const APP_DESCRIPTION = BRAND.metaDescription;
 const SITE_URL = env.NEXT_PUBLIC_SITE_URL;
 const APP_KEYWORDS = [
   BRAND.nameRoman,
-  BRAND.nameDeva,
   "international journal",
   "multidisciplinary journal",
   "multidisciplinary research",

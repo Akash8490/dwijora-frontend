@@ -13,8 +13,7 @@ import type {
 
 export const journalMeta: JournalMeta = {
   name: BRAND.nameRoman,
-  nameDevanagari: BRAND.nameDeva,
-  shloka: BRAND.shlokaDeva,
+  shloka: BRAND.shlokaTranslit,
   shlokaTranslation: BRAND.shlokaTranslation,
   tagline: BRAND.subtitle,
   // TODO(client): populate ISSN and e-ISSN once assigned by CSIR-NIScPR.
@@ -35,7 +34,6 @@ export const journalMeta: JournalMeta = {
   contactEmail: "visvasamvidimrj@gmail.com",
   contactPhone: "+91 87350 13858",
   address: "Bopal, Ahmedabad, Gujarat, India",
-  frequency: "Quarterly (4 issues per year)",
   scope:
     "Education, humanities, social sciences, sciences, technology, management and interdisciplinary research.",
   startingYear: 2026,
@@ -85,7 +83,7 @@ export const authorsPool: Author[] = [
   ),
   A(
     "a-bhavikaben-vasava",
-    "डॉ. भाविकाबेन छत्रसिंह वसावा",
+    "Dr. Bhavikaben Chhatrasinh Vasava",
     // TODO(client): affiliation not stated in the manuscript — request it.
     "Affiliation to be confirmed",
     { country: "India", isCorresponding: true, email: "bhaviketan143@gmail.com" },
@@ -106,13 +104,13 @@ export const authorsPool: Author[] = [
   ),
   A(
     "a-bhavin-gadhvi",
-    "ભાવિનકુમાર અજીતભાઈ ગઢવી",
+    "Mr. Bhavinkumar Ajitbhai Gadhvi",
     "Postgraduate Gujarati Department, Sardar Patel University, Vallabh Vidyanagar, Gujarat, India",
     { country: "India", isCorresponding: true, email: "bagadhvi@gmail.com" },
   ),
   A(
     "a-rashmikaben-bhoi",
-    "डॉ. रश्मिकाबेन भीखाभाई भोई",
+    "Dr. Rashmikaben Bhikhabhai Bhoi",
     "Maharaja Sayajirao University of Baroda, Vadodara, Gujarat, India",
     { country: "India", isCorresponding: true, email: "rashmikabhoi220@gmail.com" },
   ),
@@ -268,17 +266,17 @@ export const papers: Paper[] = [
   P(
     "p01-04",
     "hindi-language-teaching-ai-multilingualism-active-learning",
-    "कृत्रिम बुद्धिमत्ता, बहुभाषिकता एवं सक्रिय अधिगम को एकीकृत करने वाली हिन्दी भाषा शिक्षण की शैक्षिक प्रतिमान",
-    "वर्तमान समय में शिक्षा के क्षेत्र में कृत्रिम बुद्धिमत्ता (Artificial Intelligence), डिजिटल तकनीक, बहुभाषिकता एवं सक्रिय अधिगम का प्रभाव निरंतर बढ़ रहा है। भाषा शिक्षण के संदर्भ में इन नवीन आयामों का समन्वित उपयोग शिक्षण-अधिगम प्रक्रिया को अधिक विद्यार्थी-केंद्रित, संवादात्मक, सृजनात्मक एवं कौशल-आधारित बना सकता है। भारत जैसे बहुभाषिक देश में हिन्दी भाषा शिक्षण के लिए विद्यार्थियों की भाषाई विविधता को समझना तथा उसे शिक्षण संसाधन के रूप में प्रयोग करना आवश्यक है। इसी प्रकार कृत्रिम बुद्धिमत्ता के माध्यम से व्यक्तिगत अधिगम, त्वरित प्रतिक्रिया, डिजिटल सामग्री, संवादात्मक अभ्यास तथा भाषा कौशलों के विकास की संभावनाएँ बढ़ी हैं। प्रस्तुत शोध-पत्र का उद्देश्य कृत्रिम बुद्धिमत्ता, बहुभाषिकता एवं सक्रिय अधिगम के समन्वित प्रयोग की संभावनाओं का विश्लेषण करते हुए हिन्दी भाषा शिक्षण के लिए एक नवीन शैक्षिक प्रतिमान प्रस्तुत करना है। अध्ययन में वर्णनात्मक एवं विश्लेषणात्मक दृष्टिकोण के आधार पर संबंधित साहित्य, राष्ट्रीय शिक्षा नीति 2020, भाषा शिक्षण के सिद्धांत तथा सक्रिय अधिगम की अवधारणाओं का विश्लेषण किया गया है। अध्ययन के आधार पर यह स्पष्ट होता है कि AI को बहुभाषिक एवं सक्रिय अधिगम रणनीतियों के साथ एकीकृत करने से हिन्दी भाषा के सुनने, बोलने, पढ़ने एवं लिखने के कौशलों के विकास के साथ-साथ रचनात्मकता, आलोचनात्मक चिंतन, सहयोग एवं अधिगम अभिप्रेरणा को भी बढ़ावा दिया जा सकता है। साथ ही AI के प्रयोग में तथ्यात्मक शुद्धता, डिजिटल विभाजन, शिक्षक की भूमिका, डेटा गोपनीयता एवं नैतिकता जैसी चुनौतियों को ध्यान में रखना आवश्यक है।",
+    "An Educational Model for Hindi Language Teaching Integrating Artificial Intelligence, Multilingualism and Active Learning",
+    "In the present era the influence of Artificial Intelligence, digital technology, multilingualism and active learning on education continues to grow. In the context of language teaching, the integrated use of these new dimensions can make the teaching-learning process more learner-centred, interactive, creative and skill-based. In a multilingual country such as India it is essential to understand the linguistic diversity of students and to use that diversity as a teaching resource. Artificial Intelligence has likewise widened the scope for personalised learning, immediate feedback, digital material, conversational practice and the development of language skills. The purpose of this paper is to analyse the possibilities of the integrated use of Artificial Intelligence, multilingualism and active learning, and on that basis to present a new educational model for Hindi language teaching. The study follows a descriptive and analytical approach, examining the related literature, the National Education Policy 2020, the principles of language teaching and the concepts of active learning. It concludes that integrating AI with multilingual and active-learning strategies can develop the listening, speaking, reading and writing skills of Hindi while also fostering creativity, critical thinking, collaboration and learning motivation. At the same time, challenges such as factual accuracy, the digital divide, the role of the teacher, data privacy and ethics must be kept firmly in view wherever AI is used.",
     ["a-bhavikaben-vasava"],
     [
-      "कृत्रिम बुद्धिमत्ता",
-      "हिन्दी भाषा शिक्षण",
-      "बहुभाषिकता",
-      "सक्रिय अधिगम",
-      "डिजिटल शिक्षा",
-      "भाषा दक्षता",
-      "शैक्षिक प्रतिमान",
+      "Artificial Intelligence",
+      "Hindi Language Teaching",
+      "Multilingualism",
+      "Active Learning",
+      "Digital Education",
+      "Language Proficiency",
+      "Educational Model",
     ],
     "c1",
     "v01",
@@ -287,10 +285,12 @@ export const papers: Paper[] = [
     35,
     "2026-08-01",
     {
+      // `language` describes the PDF of record, which remains in this
+      // language. The page text is English only: the ISSN India office
+      // (Oct 2026) asked for no Devanagari/Gujarati anywhere on the site.
+      // TODO(client): have the author approve this English title, abstract
+      // and keyword set — they are editorial translations.
       language: "hi",
-      // TODO(client): confirm the official English title for the Hindi paper.
-      titleAlt:
-        "An Educational Model for Hindi Language Teaching Integrating Artificial Intelligence, Multilingualism and Active Learning",
     },
   ),
   P(
@@ -341,17 +341,17 @@ export const papers: Paper[] = [
   P(
     "p01-07",
     "marsiya-gujarati-folk-elegies",
-    "ભારતીય લોકસંસ્કૃતિની મૂલ્યવાન સરવાણી: મરસિયા",
-    "ભારતીય જ્ઞાનપરંપરાના સંદર્ભમાં અહીં મરસિયા વિશે વિસ્તૃત માહિતી આપવાનો પ્રયાસ કરવામાં આવ્યો છે. લોકસાહિત્યના વિવિધ સ્વરૂપોમાં એક મહત્ત્વનું સ્વરૂપ એટલે લોકગીત. વિવિધ સાહિત્યકારોએ પોતપોતાના મત મુજબ લોકગીતોનું વર્ગીકરણ કર્યું છે અને તેના પ્રકારો આપ્યા છે, જેમાં હાલરડાં, ગોરમાનાં ગીતો, લગ્નગીતો, રાંદલનાં ગીતો, તુલસી વિવાહનાં ગીતો, ઉત્સવ-મેળાનાં ગીતો, રાસ/રાસડા, ગરબા/ગરબીઓ, સંતવાણી/ભજન અને મરસિયાનો સમાવેશ થાય છે. આ દસ પ્રકારોમાંથી અહીં મરસિયા વિશે વાત કરવામાં આવી છે. ભારતીય સંતો, ઋષિમુનિઓ, ચિંતકો અને સમર્થ સાહિત્યકારોએ મૃત્યુ સંદર્ભે અનેક વાતો કરી છે. જે જન્મે છે તેનું મૃત્યુ નિશ્ચિત છે — એ સનાતન સત્ય છે, પરંતુ આત્મા અમર છે. ભગવાન શ્રી કૃષ્ણએ પણ કુરુક્ષેત્રના મેદાનમાં અર્જુનને પોતાના વિરાટ સ્વરૂપનું દર્શન કરાવીને આત્માની અમરતા, દેહની નશ્વરતા અને કર્મનો સિદ્ધાંત સમજાવ્યો હતો. માનવજીવનની નશ્વરતા શાશ્વત હોવા છતાં વ્યક્તિ દુન્યવી મોહમાયાને કારણે સંબંધોની માયાજાળમાં ફસાય છે, અને સ્વજનની વિદાય તેને ખટકે છે. આ પરંપરા માત્ર ગુજરાત કે ભારતમાં જ નહીં પણ વિશ્વના બધા દેશો, વિવિધ ભાષાઓ અને પ્રજાઓમાં દૃષ્ટિગોચર થાય છે — ભારતીય જ્ઞાનપરંપરાના સંદર્ભમાં આ વિષય સાર્વભૌમ અને સનાતન જણાય છે. પ્રસ્તુત લેખમાં મરસિયાનો અર્થ, વ્યાખ્યા, વિવિધ સાહિત્યમાંનાં વિલાપકાવ્યો તથા મરસિયાનાં વિષય-વૈવિધ્યની વિસ્તારપૂર્વક ચર્ચા કરવામાં આવી છે.",
+    "The Valuable Stream of Indian Folk Culture: Marsiya (Elegies)",
+    "This article presents a detailed account of marsiya, the elegiac songs of Gujarati folk tradition, within the framework of the Indian knowledge tradition. Among the many forms of folk literature the folk song holds a central place, and scholars have classified folk songs into ten principal types: lullabies, Gorma songs, wedding songs, Randal songs, Tulsi-vivaha songs, festival and fair songs, rasa and rasada, garba and garbi, marsiya, and santavani or bhajan. Of these the present study takes up marsiya. Indian saints, sages, thinkers and accomplished writers have reflected at length on death. That whatever is born must die is an eternal truth, yet the soul is immortal; on the field of Kurukshetra Lord Krishna revealed his universal form to Arjuna and explained the immortality of the soul, the transience of the body and the doctrine of action. Though the transience of human life is constant, worldly attachment makes the parting of a loved one hard to bear. This tradition is found not only in Gujarat or in India but across the world, in many languages and among many peoples, and within the Indian knowledge tradition the subject appears universal and perennial. The article discusses the meaning and definition of marsiya, the lament poetry found across various literatures, and the thematic variety of the form at length.",
     ["a-bhavin-gadhvi"],
     [
-      "મરસિયા",
-      "લોકસાહિત્ય",
-      "લોકગીત",
-      "વિલાપકાવ્ય",
-      "કરુણપ્રશસ્તિ",
-      "ભારતીય જ્ઞાનપરંપરા",
-      "ગુજરાતી લોકસંસ્કૃતિ",
+      "Marsiya",
+      "Folk Literature",
+      "Folk Song",
+      "Lament Poetry",
+      "Elegiac Eulogy",
+      "Indian Knowledge Tradition",
+      "Gujarati Folk Culture",
     ],
     "c2",
     "v01",
@@ -360,26 +360,28 @@ export const papers: Paper[] = [
     88,
     "2026-08-01",
     {
+      // `language` describes the PDF of record, which remains in this
+      // language. The page text is English only: the ISSN India office
+      // (Oct 2026) asked for no Devanagari/Gujarati anywhere on the site.
+      // TODO(client): have the author approve this English title, abstract
+      // and keyword set — they are editorial translations.
       language: "gu",
-      // TODO(client): confirm the official English title for the Gujarati paper.
-      titleAlt:
-        "The Valuable Stream of Indian Folk Culture: Marsiya (Elegies)",
     },
   ),
   P(
     "p01-08",
     "indian-childrens-literature-global-perspective",
-    "भारतीय बालकथाओं का वैश्विक दृष्टिकोण से अभ्यास",
-    "भारतीय बाल साहित्य हमारी प्राचीन विरासत है। यह एक तथ्य है कि भारत में 'बाल साहित्य' शब्द पश्चिम से आया है, लेकिन क्या इसका मतलब यह है कि बाल साहित्य हमारे पास पश्चिम से आया है? भारत के प्राचीन साहित्य — पंचतंत्र, हितोपदेश — में हमें बाल साहित्य के अवशेष मिलते हैं। भारत में हम व्यक्ति, समाज, संस्कृति, साहित्य आदि में वैश्विकता देखते हैं। इस शोध पत्र में भारतीय बाल कहानियों में वैश्विकता कैसे दिखती है, भारत की धरती पर जिस तरह से एक बच्चे का पालन-पोषण होता है वह दुनिया के बच्चों के लिए कैसे उपयोगी होगा, हमारी कहानियों से दुनिया के बच्चे कैसे बड़े हुए, दुनिया ने भारतीय बाल साहित्य से क्या लिया — इन सभी का अध्ययन इस शोध लेख में किया गया है। भारतीय बालकथाएँ न केवल बच्चों के लिए मनोरंजन का माध्यम रही हैं, बल्कि जीवन के नैतिक, सामाजिक और सांस्कृतिक पहलुओं की भी शिक्षा देती रही हैं। पंचतंत्र, हितोपदेश और जटायुकथा जैसे ग्रंथों में बाल साहित्य के प्राचीन स्वरूप के उदाहरण देखे जा सकते हैं। भारतीय बाल साहित्य की वैश्विकता न केवल भारतीय समाज, बल्कि पूरी दुनिया के बच्चों के जीवन में एक सकारात्मक बदलाव लाने में सक्षम है।",
+    "A Study of Indian Children's Stories from a Global Perspective",
+    "Indian children's literature is part of our ancient heritage. It is true that the term children's literature reached India from the West, but does that mean the literature itself came to us from the West? Traces of children's literature are found in India's ancient texts, in the Panchatantra and the Hitopadesha. In India we see universality in the individual, in society, in culture and in literature alike. This paper studies how that universality appears in Indian children's stories; how the way a child is raised on Indian soil may be of use to children elsewhere in the world; how children across the world grew up on our stories; and what the world has taken from Indian children's literature. Indian children's stories have not only been a medium of entertainment but have also taught the moral, social and cultural dimensions of life. Examples of the ancient form of this literature can be seen in texts such as the Panchatantra, the Hitopadesha and the Jatayu-katha. The universality of Indian children's literature is capable of bringing a positive change to the lives of children not only in Indian society but throughout the world.",
     ["a-rashmikaben-bhoi"],
     [
-      "भारतीय बाल साहित्य",
-      "वैश्विक दृष्टिकोण",
-      "पंचतंत्र",
-      "हितोपदेश",
-      "नैतिक शिक्षा",
-      "सांस्कृतिक विविधता",
-      "बालकथाएँ",
+      "Indian Children's Literature",
+      "Global Perspective",
+      "Panchatantra",
+      "Hitopadesha",
+      "Moral Education",
+      "Cultural Diversity",
+      "Children's Stories",
     ],
     "c2",
     "v01",
@@ -388,10 +390,12 @@ export const papers: Paper[] = [
     95,
     "2026-08-01",
     {
-      language: "hi",
-      // TODO(client): confirm the official English title for the Hindi paper.
-      titleAlt:
-        "A Study of Indian Children's Stories from a Global Perspective",
+      // `language` describes the PDF of record, which remains in this
+      // language. The page text is English only: the ISSN India office
+      // (Oct 2026) asked for no Devanagari/Gujarati anywhere on the site.
+      // TODO(client): have the author approve this English title, abstract
+      // and keyword set — they are editorial translations.
+      language: "gu",
     },
   ),
 ];
@@ -427,8 +431,7 @@ export const editors: Editor[] = [
       "Research Methodology",
     ],
     bio: "Dr. Prabhatbhai M. Kasra is an experienced teacher educator, researcher, and academic administrator with over 22 years in higher education, currently serving as Principal of Sardar Patel College of Education, Bakrol. He holds a Ph.D. in Education from Sardar Patel University, with doctoral research on the educational philosophy of Shrimad Rajchandra. He has authored more than 25 research papers, published books and edited academic volumes, and presented widely at national and international conferences. His academic interests include Teacher Education, Indian Knowledge Systems, Sanskrit Education, NEP 2020, and Research Methodology.",
-    honours: ["Best Principal Award", "National Excellency Award"],
-    email: "prabhatkasra@gmail.com",
+    honours: ["Best Principal Award", "National Excellency Award"],    email: "prabhatkasra@gmail.com",
     profileUrl:
       "https://www.spec.edu.in/specbed/Staff-Profile.aspx?cid=6&sid=336",
     photoUrl: "/editorial-board/prabhat-m-kasra.jpg",

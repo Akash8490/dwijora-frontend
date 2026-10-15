@@ -12,7 +12,6 @@ import { Badge } from "@/app/components/ui/badge";
 import { StatCard } from "@/app/components/containers/common/StatCard";
 import { FeatureCard } from "@/app/components/containers/common/FeatureCard";
 import { ShieldCheck, Globe2, Award, FileCheck2, BookOpen, Users, Languages, FileText } from "lucide-react";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { JournalParticularsTable } from "@/app/components/containers/common/JournalParticularsTable";
 import { getJournalMeta } from "@/app/lib/services/journal.service";
 import { buildMetadata } from "@/app/lib/seo";
@@ -49,8 +48,7 @@ async function AboutContent() {
         eyebrow="About the Journal"
         title={
           <>
-            <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-            {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
+            {BRAND.nameFull}
           </>
         }
         subtitle="An international, peer-reviewed, multidisciplinary journal welcoming scholarly work across every field of knowledge."
@@ -83,29 +81,23 @@ async function AboutContent() {
             <Prose>
               <h2>About the journal</h2>
               <p>
-                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-                {" "}({BRAND.nameRoman}) – Universal Consciousness &amp; Knowledge
-                is an international, peer-reviewed, multidisciplinary journal
+                {BRAND.nameFull}{" "}is an international, peer-reviewed, multidisciplinary journal
                 dedicated to promoting scholarly excellence and dialogue
                 across diverse fields of knowledge. The
                 journal provides a dynamic platform for researchers,
                 academicians, educators, professionals, and students to share
                 innovative ideas, original research, and critical perspectives.
                 Embracing linguistic diversity,{" "}
-                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-                {" "}publishes scholarly contributions in multiple languages,
+                {BRAND.nameRoman}{" "}publishes scholarly contributions in multiple languages,
                 encouraging inclusive academic participation and
                 cross-cultural knowledge exchange. The journal welcomes research
                 articles, review papers, case studies, book reviews, and
                 interdisciplinary studies that address contemporary challenges
                 and advance human understanding. Guided by the timeless Vedic
                 principle,{" "}
-                <Sanskrit as="em">
-                  {`“${BRAND.shlokaDeva}”`}
-                </Sanskrit>
+                <em>{`“${BRAND.shlokaTranslit}”`}</em>
                 {" "}({`“${BRAND.shlokaTranslation.replace(/\.$/, "")}”`}),{" "}
-                <Sanskrit>{BRAND.nameDeva}</Sanskrit>
-                {" "}aspires to bridge cultures, disciplines, and languages
+                {BRAND.nameRoman}{" "}aspires to bridge cultures, disciplines, and languages
                 while fostering ethical scholarship, intellectual collaboration,
                 innovation, and the universal pursuit of knowledge for the
                 betterment of society.
@@ -128,7 +120,6 @@ async function AboutContent() {
           <div className="flex flex-col gap-4">
             <StatCard label="Editor-in-Chief" value={meta.editorInChief} hint="Sardar Patel University, Vallabh Vidyanagar, Gujarat" icon={<Users className="h-4 w-4" />} />
             <StatCard label="Publisher" value={meta.publisher} hint="Bopal, Ahmedabad, Gujarat, India" icon={<BookOpen className="h-4 w-4" />} />
-            <StatCard label="Frequency" value={meta.frequency.split(" (")[0]} hint={meta.frequency} icon={<Award className="h-4 w-4" />} />
             <StatCard
               label="ISSN / e-ISSN"
               value={`${meta.issn ?? "N/A"} / ${meta.eIssn ?? "Applied for"}`}
@@ -211,13 +202,9 @@ async function AboutContent() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-brand bg-card-brand p-6 md:p-8 paper-shadow">
-          <Sanskrit
-            as="p"
-            variant="quote"
-            className="text-2xl md:text-3xl text-brand-accent-deep"
-          >
-            {BRAND.shlokaDeva}
-          </Sanskrit>
+          <p className="font-display text-2xl italic md:text-3xl text-brand-accent-deep">
+            {BRAND.shlokaTranslit}
+          </p>
           <p className="mt-2 italic text-brand-muted">
             {BRAND.shlokaTranslation}
           </p>

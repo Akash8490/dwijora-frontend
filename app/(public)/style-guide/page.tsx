@@ -20,7 +20,6 @@ import { Textarea } from "@/app/components/ui/textarea";
 import { Skeleton } from "@/app/components/ui/skeleton";
 import { Card } from "@/app/components/ui/card";
 import { ShieldCheck, Globe2, FileText, BookOpen } from "lucide-react";
-import { Sanskrit } from "@/app/components/containers/common/Sanskrit";
 import { editors, papers } from "@/app/lib/services/mock/journal.mock";
 import { BRAND } from "@/app/lib/brand";
 import { buildMetadata } from "@/app/lib/seo";
@@ -85,13 +84,13 @@ export default function StyleGuidePage() {
             <p className="text-base text-brand-ink">Aa — Body sans</p>
           </div>
           <div>
-            <p className="text-xs text-brand-muted">Devanagari / Noto Serif Devanagari</p>
-            <Sanskrit as="p" variant="display" className="text-4xl text-brand-ink">
-              {BRAND.nameDeva}
-            </Sanskrit>
-            <Sanskrit as="p" variant="quote" className="mt-2 text-lg text-brand-accent-deep">
-              {BRAND.shlokaDeva}
-            </Sanskrit>
+            <p className="text-xs text-brand-muted">Motto / Display italic</p>
+            {/* The site is romanised end to end (ISSN India, Oct 2026). The
+                Devanagari and Gujarati faces stay wired up in fonts.ts for
+                article text that may arrive in those scripts. */}
+            <p className="font-display text-lg italic text-brand-accent-deep">
+              {BRAND.shlokaTranslit}
+            </p>
           </div>
           <div className="space-y-1 border-t border-brand pt-4">
             <p className="font-display text-4xl">H1 · Display 48</p>
