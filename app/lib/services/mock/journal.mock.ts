@@ -431,9 +431,9 @@ export const editors: Editor[] = [
       "Research Methodology",
     ],
     bio: "Dr. Prabhatbhai M. Kasra is an experienced teacher educator, researcher, and academic administrator with over 22 years in higher education, currently serving as Principal of Sardar Patel College of Education, Bakrol. He holds a Ph.D. in Education from Sardar Patel University, with doctoral research on the educational philosophy of Shrimad Rajchandra. He has authored more than 25 research papers, published books and edited academic volumes, and presented widely at national and international conferences. His academic interests include Teacher Education, Indian Knowledge Systems, Sanskrit Education, NEP 2020, and Research Methodology.",
-    honours: ["Best Principal Award", "National Excellency Award"],    email: "prabhatkasra@gmail.com",
-    profileUrl:
-      "https://www.spec.edu.in/specbed/Staff-Profile.aspx?cid=6&sid=336",
+    honours: ["Best Principal Award", "National Excellency Award"],
+    email: "prabhatkasra@gmail.com",
+    profileUrl: null,
     photoUrl: "/editorial-board/prabhat-m-kasra.jpg",
     // Moved from Chief Editor to Editor per client instruction. Kept at
     // displayOrder 2 so he sits at the top of the Editors grid — the senior
