@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink, Mail, MapPin, GraduationCap, Award, BookOpen, Briefcase } from "lucide-react";
+import { Mail, MapPin, GraduationCap, Award, BookOpen, Briefcase } from "lucide-react";
 import { PageHero } from "@/app/components/containers/common/PageHero";
 import { Section } from "@/app/components/containers/common/Section";
 import { EditorCard } from "@/app/components/containers/common/EditorCard";
@@ -157,18 +157,6 @@ export function ProfileView({ data }: { data: ProfileViewData }) {
                     Email not published.
                   </p>
                 )}
-                {member.profileUrl ? (
-                  <Button asChild variant="outline" className="justify-start">
-                    <a
-                      href={member.profileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      View profile
-                    </a>
-                  </Button>
-                ) : null}
               </div>
             </Card>
 
