@@ -45,7 +45,13 @@ export function JournalParticularsTable({
     { label: "Editor-in-Chief", value: meta.editorInChief },
     { label: "Starting year", value: String(meta.startingYear) },
     { label: "Subject", value: meta.subject },
-    { label: "Language", value: meta.languages.join(", ") },
+    {
+      label: "Language",
+      value:
+        meta.languages.length > 1
+          ? `Multiple Languages (${meta.languages.join(", ")})`
+          : meta.languages.join(", "),
+    },
     { label: "Publication format", value: meta.publicationFormat },
     {
       label: "Email",

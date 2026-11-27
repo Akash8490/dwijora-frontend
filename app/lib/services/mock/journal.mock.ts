@@ -39,7 +39,9 @@ export const journalMeta: JournalMeta = {
   startingYear: 2026,
   publicationFormat: "Online",
   subject: "Multidisciplinary — All Fields of Knowledge",
-  languages: ["Multi Language"],
+  // ISSN India (Nov 2026) asked that every language be named explicitly
+  // instead of a generic "Multi Language" label.
+  languages: ["English", "Sanskrit", "Hindi", "Gujarati"],
 };
 
 export const categories: Category[] = [
