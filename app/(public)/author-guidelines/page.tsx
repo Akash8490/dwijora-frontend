@@ -43,8 +43,8 @@ export default function AuthorGuidelinesPage() {
                 figures, and formulas).
               </li>
               <li>
-                <strong>Language:</strong> Multilingual — manuscripts are
-                accepted in multiple languages.
+                <strong>Language:</strong> Multiple languages — manuscripts
+                are accepted in English, Sanskrit, Hindi, and Gujarati.
               </li>
               <li>
                 <strong>File format:</strong> Microsoft Word (.doc or .docx)

@@ -56,7 +56,7 @@ export function siteJsonLd() {
     name: BRAND.nameRoman,
     alternateName: BRAND.nameFull,
     url: SITE_URL,
-    inLanguage: ["en", "hi", "gu"],
+    inLanguage: ["en", "sa", "hi", "gu"],
     publisher: { "@id": `${SITE_URL}/#organization` },
     description: BRAND.metaDescription,
   };

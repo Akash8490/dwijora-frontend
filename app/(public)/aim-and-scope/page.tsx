@@ -19,7 +19,7 @@ import {
   FileText,
   LayersIcon,
 } from "lucide-react";
-import { getCategories } from "@/app/lib/services/journal.service";
+import { getCategories, getJournalMeta } from "@/app/lib/services/journal.service";
 import { buildMetadata } from "@/app/lib/seo";
 import { BRAND } from "@/app/lib/brand";
 import { ROUTES } from "@/app/lib/routeEndPoints";
@@ -41,7 +41,6 @@ const ICON_BY_SLUG: Record<string, React.ReactNode> = {
   interdisciplinary: <LayersIcon className="h-5 w-5" />,
 };
 
-const LANGUAGES = ["Multi Language"];
 const CONTRIBUTION_TYPES = [
   "Research articles",
   "Review papers",
@@ -54,7 +53,11 @@ const CONTRIBUTION_TYPES = [
 ];
 
 async function ScopeContent() {
-  const { data: categories } = await getCategories();
+  const [{ data: categories }, { data: meta }] = await Promise.all([
+    getCategories(),
+    getJournalMeta(),
+  ]);
+  const languages = meta.languages;
   return (
     <>
       <PageHero
@@ -85,7 +88,7 @@ async function ScopeContent() {
               and conference papers, and special issues that address
               contemporary challenges and advance human understanding.
               Embracing linguistic diversity, contributions are accepted
-              in multiple languages.
+              in multiple languages ({languages.join(", ")}).
             </p>
 
             {/* TODO(client): supply detailed, per-discipline aim & scope copy
@@ -127,7 +130,7 @@ async function ScopeContent() {
               research can reach the audiences it belongs to.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {LANGUAGES.map((l) => (
+              {languages.map((l) => (
                 <Badge key={l} variant="secondary" className="bg-brand-surface-2 text-brand-ink border border-brand font-normal">
                   {l}
                 </Badge>

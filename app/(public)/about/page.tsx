@@ -24,7 +24,6 @@ export const metadata: Metadata = buildMetadata({
   path: "/about",
 });
 
-const LANGUAGES = ["Multi Language"];
 const CONTRIBUTION_TYPES = [
   "Research articles",
   "Review papers",
@@ -135,7 +134,7 @@ async function AboutContent() {
       <Section
         eyebrow="For indexers, libraries & reviewers"
         title="Journal Particulars"
-        subtitle="The standard bibliographic and publisher information required by ISSN India (CSIR-NIScPR) and other indexing bodies."
+        subtitle="The standard bibliographic and publisher information required by ISSN India and other indexing bodies."
       >
         <JournalParticularsTable meta={meta} className="mx-auto max-w-4xl" />
       </Section>
@@ -153,11 +152,11 @@ async function AboutContent() {
               <p className="text-xs font-semibold uppercase tracking-wider">Languages</p>
             </div>
             <p className="mt-3 text-sm text-brand-muted">
-              Scholarly contributions welcomed in three languages so
+              Scholarly contributions welcomed in multiple languages so
               scholarship can reach the audiences it belongs to.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {LANGUAGES.map((l) => (
+              {meta.languages.map((l) => (
                 <Badge key={l} variant="secondary" className="bg-brand-surface-2 text-brand-ink border border-brand font-normal">
                   {l}
                 </Badge>
